@@ -14,3 +14,4 @@
 * {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
+@custom-variant dark (&:where(.dark, .dark *));
