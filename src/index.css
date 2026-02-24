@@ -1,1 +1,16 @@
 @import "tailwindcss";
+@theme {
+  --color-violet: #8B5CF6;
+  --color-violet-light: #A78BFA;
+
+  --color-bg-dark: #0B0F1A;
+  --color-card-dark: #111827;
+
+  --color-text-main: #E5E7EB;
+  --color-text-muted: #9CA3AF;
+
+  --color-border: #1F2937;
+}
+* {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}

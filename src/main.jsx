@@ -6,6 +6,8 @@ import Layout from './Layout';
 import About from './components/About';
 import Contact from './components/Contact';
 import Home from './components/Home';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +15,8 @@ const router = createBrowserRouter(
       <Route index element={<Home/>}/>
       <Route path="about" element={<About/>}/>
       <Route path="contact" element={<Contact/>}/>
+      <Route path="skills" element={<Skills/>}/>
+      <Route path="projects" element={<Projects/>}/>
     </Route>
   )
 )
