@@ -6,9 +6,16 @@ import Navbar from "./components/Navbar";
 function Layout() {
   return (
     <>
-      <Navbar />
-      <Outlet />
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+
+        {/* Main content */}
+        <main className="flex-grow">
+          <Outlet />
+        </main>
+
+        <Footer />
+      </div>
     </>
   );
 }

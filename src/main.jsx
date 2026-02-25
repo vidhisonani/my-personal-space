@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Education from './components/Education';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact/>}/>
       <Route path="skills" element={<Skills/>}/>
       <Route path="projects" element={<Projects/>}/>
+      <Route path="education" element={<Education/>}/>
     </Route>
   )
 )
