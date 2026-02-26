@@ -1,6 +1,6 @@
 import React from "react";
 import { BsGithub } from "react-icons/bs";
-import { CiLinkedin } from "react-icons/ci";
+import { FaLinkedin } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="dark:bg-card-dark bg-gray w-full border-t border-gray-200 dark:border-violet py-4">
+    <footer className="dark:bg-bg-dark bg-gray w-full border-t border-gray-200 dark:border-violet py-4 shadow-lg shadow-gray-500 dark:shadow-sm">
       <div className="mt-2 flex justify-center items-center max-w-[90vw] mx-auto dark:text-white text-2xl sm:text-2xl">
         <a
           href="https://github.com/vidhisonani"
@@ -24,7 +24,7 @@ function Footer() {
           rel="noopener noreferrer"
           aria-label="LinkedIn Profile"
         >
-          <CiLinkedin className="cursor-pointer mx-2 mb-2 hover:text-violet transition-colors duration-200" />
+          <FaLinkedin className="cursor-pointer mx-2 mb-2 hover:text-violet transition-colors duration-200" />
         </a>
         <a href="mailto:vidhilotus7@gmail.com" aria-label="Send Email">
           <MdOutlineEmail className="cursor-pointer mx-2 mb-2 hover:text-violet transition-colors duration-200" />

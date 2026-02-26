@@ -20,14 +20,14 @@ function Navbar() {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/skills", label: "Skills" },
-    { path: "/projects", label: "Projects" },
     { path: "/education", label: "Education" },
+    { path: "/projects", label: "Projects" },
     { path: "/contact", label: "Contact" },
   ];
 
   return (
     <header className="shadow sticky z-50 top-0">
-      <nav className="dark:bg-card-dark bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+      <nav className="dark:bg-bg-dark bg-white border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex justify-between items-center mx-auto max-w-screen-2xl">
           {/* Logo */}
           <h1 className="flex items-center text-3xl font-semibold text-violet">

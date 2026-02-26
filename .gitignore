@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 color-codes.txt
+.env
