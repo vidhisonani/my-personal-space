@@ -90,7 +90,7 @@ function Navbar() {
                   viewBox="0 0 24 24"
                   width="28"
                   height="28"
-                  color="#f8e71c"
+                  color="#8B5CF6"
                   fill="none"
                 >
                   <defs />
@@ -105,7 +105,7 @@ function Navbar() {
                   viewBox="0 0 24 24"
                   width="28"
                   height="28"
-                  color="#3081df"
+                  color="#A78BFA"
                   fill="none"
                 >
                   <defs />
