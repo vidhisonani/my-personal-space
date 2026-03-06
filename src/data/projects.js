@@ -5,6 +5,7 @@ export const projectData = [
         liveLink: null,
         githubLink: "https://github.com/vidhisonani/web-mini-projects",
         subProjects: [
+            { name: "🌐 Personal Portfolio — HTML CSS JS", liveLink: "https://portfolio-project-by-vidhi-patel.netlify.app/" },
             { name: "🌤️ Daily Weather", liveLink: null },
             { name: "📝 To-Do List", liveLink: null },
             { name: "⏰ Digital Clock", liveLink: "https://digitalclockbyvidhi.netlify.app/" },
