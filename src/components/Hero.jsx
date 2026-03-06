@@ -41,17 +41,17 @@ function Hero() {
       className="dark:bg-card-dark bg-gray-50 min-h-screen flex flex-col items-center justify-center px-6 text-center"
     >
       {/* Greeting */}
-      <p className="text-violet dark:text-text-muted text-lg mb-3 tracking-wide">
+      <p data-aos="fade-down" data-aos-duration="600" className="text-violet dark:text-text-muted text-lg mb-3 tracking-wide">
         Hello, I'm
       </p>
 
       {/* Name */}
-      <h1 className="text-5xl md:text-6xl font-bold text-violet dark:text-text-main mb-4 leading-tight">
+      <h1 data-aos="fade-down" data-aos-duration="600" data-aos-delay="100" className="text-5xl md:text-6xl font-bold text-violet dark:text-text-main mb-4 leading-tight">
         <span className="text-violet">Vidhi Patel</span>
       </h1>
 
       {/* Typed role */}
-      <div className="text-3xl md:text-4xl font-bold text-violet-light dark:text-text-main mb-4 h-12 flex items-center justify-center gap-2">
+      <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="200" className="text-3xl md:text-4xl font-bold text-violet-light dark:text-text-main mb-4 h-12 flex items-center justify-center gap-2">
         I'm a{" "}
         <span className="text-violet min-w-[10ch] text-left">
           {displayed}
@@ -60,12 +60,12 @@ function Hero() {
       </div>
 
       {/* Subtitle */}
-      <p className="text-violet-light dark:text-text-muted text-base md:text-lg mb-8">
+      <p data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" className="text-violet-light dark:text-text-muted text-base md:text-lg mb-8">
         Computer Engineering Student
       </p>
 
       {/* CTA Buttons */}
-      <div className="flex items-center gap-4 flex-wrap justify-center mb-10">
+      <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="400"  className="flex items-center gap-4 flex-wrap justify-center mb-10">
         <a
           href="#projects"
           className="flex items-center gap-2 px-6 py-3 rounded-xl bg-violet text-white font-semibold text-sm hover:bg-violet-light transition-all duration-300 hover:shadow-lg hover:shadow-violet/30 hover:-translate-y-0.5"
@@ -82,7 +82,7 @@ function Hero() {
       </div>
 
       {/* Social Links */}
-      <div className="flex items-center gap-5">
+      <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" className="flex items-center gap-5">
         <a
           href="https://github.com/vidhisonani"
           target="_blank"

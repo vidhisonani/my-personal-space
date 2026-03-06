@@ -77,8 +77,9 @@ function Contact() {
     <>
       <section id="contact" className="scroll-mt-16 "/>
       <div className="antialiased dark:bg-card-dark bg-gray-50 py-5 flex w-full min-h-screen justify-center items-center">
-        <div className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-linear-to-br from-violet via-violet-light to-indigo-500 w-[90vw] max-w-4xl p-8 rounded-xl shadow-lg text-white">
-          <div className="flex flex-col justify-between ">
+        <div data-aos="zoom-in"
+      data-aos-duration="700" className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-linear-to-br from-violet via-violet-light to-indigo-500 w-[90vw] max-w-4xl p-8 rounded-xl shadow-lg text-white">
+          <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="200" className="flex flex-col justify-between ">
             <div>
               <h1 className="font-bold text-4xl tracking-wide">Contact Me</h1>
               <p className="pt-2 text-white md:max-w-[90%]">
@@ -108,7 +109,7 @@ function Contact() {
               </a>
             </div>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-8 md:w-[65%]">
+          <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="200" className="bg-white rounded-xl shadow-lg p-8 md:w-[65%]">
             <form
               onSubmit={handleSubmit}
               noValidate

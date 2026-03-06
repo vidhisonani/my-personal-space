@@ -15,7 +15,7 @@ function Footer() {
   ];
   return (
     <footer className="dark:bg-bg-dark bg-white w-full border-t border-gray-200 dark:border-violet py-4 shadow-lg shadow-gray-500 dark:shadow-sm">
-      <div className="max-w-[95vw] md:max-w-[90vw] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-violet">
+      <div data-aos="fade-up" className="max-w-[95vw] md:max-w-[90vw] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-violet">
         <div className="md:col-span-2">
           <h1 className="text-lg md:text-xl font-bold md:mb-2 ">
             Vidhi's Portfolio

@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { projectData } from "../data/projects";
 import { FaGithub } from "react-icons/fa";
 import { HiExternalLink, HiChevronDown } from "react-icons/hi";
 
-function SubProjectRow({ sub }) {
+function SubProjectRow({ sub, index }) {
   return (
     <div className="flex items-center justify-between py-2 border-b border-border last:border-0">
       <span className="text-sm text-violet dark:text-text-muted">{sub.name}</span>
@@ -26,12 +26,17 @@ function SubProjectRow({ sub }) {
   );
 }
 
-function ProjectCard({ card }) {
+function ProjectCard({ card, index }) {
   const [expanded, setExpanded] = useState(false);
   const hasSubProjects = card.subProjects && card.subProjects.length > 0;
 
   return (
-    <div className="group dark:bg-card-dark bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-violet hover:shadow-lg hover:shadow-violet/20">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="600"
+      data-aos-delay={index * 100}
+      className="group dark:bg-card-dark bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-violet hover:shadow-lg hover:shadow-violet/20"
+    >
       <div className="flex flex-col gap-2">
         {/* Title and Description */}
         <h2 className="text-violet font-bold text-xl">{card.title}</h2>
@@ -96,16 +101,23 @@ function ProjectCard({ card }) {
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-16 dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6">
-      <div className="text-center mb-12 ">
+    <section
+      id="projects"
+      className="scroll-mt-16 dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6"
+    >
+      <div
+        data-aos="fade-down"
+        data-aos-duration="600"
+        className="text-center mb-12 "
+      >
         <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
           My Projects
         </h2>
         <p className="text-text-muted text-base">Things I have built</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {projectData.map((card) => (
-          <ProjectCard key={card.title} card={card} />
+        {projectData.map((card, i) => (
+          <ProjectCard key={card.title} card={card} index={i} />
         ))}
       </div>
     </section>

@@ -11,7 +11,7 @@ function About() {
       <div className="max-w-5xl mx-auto w-full">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div data-aos="fade-down" data-aos-duration="600" className="text-center mb-12">
           <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
             About Me
           </h2>
@@ -21,7 +21,7 @@ function About() {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" className="flex flex-col md:flex-row items-center gap-12">
 
           {/* Photo */}
           <div className="flex-shrink-0">
@@ -37,7 +37,7 @@ function About() {
           </div>
 
           {/* Bio */}
-          <div className="flex flex-col gap-5 text-center md:text-left">
+          <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="200" className="flex flex-col gap-5 text-center md:text-left">
             <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
               Hi, I'm{" "}
               <span className="font-bold text-violet">Vidhi Patel</span>, a

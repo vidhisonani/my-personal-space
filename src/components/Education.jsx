@@ -5,6 +5,9 @@ function Education() {
   function EducationCard({ edu, index }) {
     return (
       <div
+        data-aos={edu.side === "left" ? "fade-right" : "fade-left"}
+        data-aos-duration="700"
+        data-aos-delay={index * 1000}
         className={`
         relative flex items-center gap-4 md:gap-0
         ${
@@ -77,7 +80,11 @@ function Education() {
       id="education"
       className="scroll-mt-16 dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6"
     >
-      <div className="text-center mb-12">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="600"
+        className="text-center mb-12"
+      >
         <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
           Education
         </h2>
