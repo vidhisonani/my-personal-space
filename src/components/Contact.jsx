@@ -74,122 +74,123 @@ function Contact() {
     }
   }, [status]);
   return (
-    <div className="antialiased dark:bg-card-dark py-5 flex w-full min-h-screen justify-center items-center">
-      <div
-        className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-linear-to-br from-violet via-violet-light to-indigo-500 w-[90vw] max-w-4xl p-8 rounded-xl shadow-lg text-white"
-      >
-        <div className="flex flex-col justify-between ">
-          <div>
-            <h1 className="font-bold text-4xl tracking-wide">Contact Me</h1>
-            <p className="pt-2 text-white md:max-w-[90%]">
-              I'm always open to new opportunities, collaborations, or just a
-              friendly chat about tech and ideas.
-            </p>
-          </div>
-          <div className="flex space-x-3 text-2xl mt-5 md:mt-0">
-            <a
-              href="https://github.com/vidhisonani"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-            >
-              <FaGithub className="cursor-pointer" />
-            </a>
-            <a
-              href="https://linkedin.com/in/vidhipatel73/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-            >
-              <FaLinkedin className="cursor-pointer" />
-            </a>
-            <a href="mailto:vidhilotus7@gmail.com" aria-label="Send Email">
-              <MdOutlineEmail className="cursor-pointer" />
-            </a>
-          </div>
-        </div>
-        <div className="bg-white rounded-xl shadow-lg p-8 md:w-[65%]">
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="text-violet flex flex-col space-y-4 "
-          >
+    <>
+      <section id="contact" className="scroll-mt-16 "/>
+      <div className="antialiased dark:bg-card-dark bg-gray-50 py-5 flex w-full min-h-screen justify-center items-center">
+        <div className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-linear-to-br from-violet via-violet-light to-indigo-500 w-[90vw] max-w-4xl p-8 rounded-xl shadow-lg text-white">
+          <div className="flex flex-col justify-between ">
             <div>
-              <label htmlFor="name" className="text-md font-semibold">
-                Your name
-              </label>
-              <input
-                required
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Your name"
-                value={formData.name}
-                onChange={handleChange}
-                className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-violet"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-              )}
-            </div>
-            <div>
-              <label htmlFor="email" className="text-md font-semibold">
-                Email Address
-              </label>
-              <input
-                required
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-violet"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-              )}
-            </div>
-            <div>
-              <label htmlFor="message" className="text-md font-semibold">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Message"
-                rows="4"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-violet"
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-              )}
-            </div>{" "}
-            {/* Status Messages */}
-            {status === "success" && (
-              <p className="text-green-600 font-medium">
-                Message sent successfully 🎉
+              <h1 className="font-bold text-4xl tracking-wide">Contact Me</h1>
+              <p className="pt-2 text-white md:max-w-[90%]">
+                I'm always open to new opportunities, collaborations, or just a
+                friendly chat about tech and ideas.
               </p>
-            )}
-            {status === "error" && (
-              <p className="text-red-600 font-medium">
-                Something went wrong. Try again.
-              </p>
-            )}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="cursor-pointer inline-block self-end bg-violet rounded-lg text-white font-bold py-2 uppercase text-sm px-2"
+            </div>
+            <div className="flex space-x-3 text-2xl mt-5 md:mt-0">
+              <a
+                href="https://github.com/vidhisonani"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+              >
+                <FaGithub className="cursor-pointer" />
+              </a>
+              <a
+                href="https://linkedin.com/in/vidhipatel73/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+              >
+                <FaLinkedin className="cursor-pointer" />
+              </a>
+              <a href="mailto:vidhilotus7@gmail.com" aria-label="Send Email">
+                <MdOutlineEmail className="cursor-pointer" />
+              </a>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-8 md:w-[65%]">
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="text-violet flex flex-col space-y-4 "
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
-          </form>
+              <div>
+                <label htmlFor="name" className="text-md font-semibold">
+                  Your name
+                </label>
+                <input
+                  required
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-violet"
+                />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                )}
+              </div>
+              <div>
+                <label htmlFor="email" className="text-md font-semibold">
+                  Email Address
+                </label>
+                <input
+                  required
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email Address"
+                  className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-violet"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
+              </div>
+              <div>
+                <label htmlFor="message" className="text-md font-semibold">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Message"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-violet"
+                />
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
+              </div>{" "}
+              {/* Status Messages */}
+              {status === "success" && (
+                <p className="text-green-600 font-medium">
+                  Message sent successfully 🎉
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-red-600 font-medium">
+                  Something went wrong. Try again.
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="cursor-pointer inline-block self-end bg-violet rounded-lg text-white font-bold py-2 uppercase text-sm px-2"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

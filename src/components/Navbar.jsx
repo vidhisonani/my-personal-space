@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
 import Hamburger from "./Hamburger";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState("light");
+  const [activeSection, setActiveSection] = useState("home");
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -16,68 +16,88 @@ function Navbar() {
     setTheme(storedTheme);
     document.documentElement.classList.toggle("dark", storedTheme === "dark");
   }, []);
+
+  useEffect(() => {
+    const sectionIds = [
+      "home",
+      "about",
+      "skills",
+      "education",
+      "projects",
+      "contact",
+    ];
+    const observers = sectionIds.map((id) => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.4 }
+      );
+      observer.observe(el);
+      return observer;
+    });
+    return () => observers.forEach((o) => o && o.disconnect());
+  }, []);
+
   const navItems = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/skills", label: "Skills" },
-    { path: "/education", label: "Education" },
-    { path: "/projects", label: "Projects" },
-    { path: "/contact", label: "Contact" },
+    { href: "#home", label: "Home", id: "home" },
+    { href: "#about", label: "About", id: "about" },
+    { href: "#skills", label: "Skills", id: "skills" },
+    { href: "#education", label: "Education", id: "education" },
+    { href: "#projects", label: "Projects", id: "projects" },
+    { href: "#contact", label: "Contact", id: "contact" },
   ];
+  const navLinkClass = (id) =>
+    `block py-2 px-3 border-b cursor-pointer transition-all duration-200 hover:text-text-muted
+    ${
+      activeSection === id
+        ? "text-text-muted border-b-2 border-violet"
+        : "text-violet border-transparent"
+    }`;
 
   return (
     <header className="shadow sticky z-50 top-0">
       <nav className="dark:bg-bg-dark bg-white border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex justify-between items-center mx-auto max-w-screen-2xl">
           {/* Logo */}
-          <h1 className="flex items-center text-3xl font-semibold text-violet">
+          <a
+            href="#"
+            className="flex items-center text-3xl font-semibold text-violet"
+          >
             Vidhi Patel
-          </h1>
+          </a>
           {/* Desktop Nav */}
           <div className="hidden md:flex justify-between w-full md:w-auto md:order-1">
             <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0 text-violet">
-              {navItems.map(({ path, label }) => (
-                <li key={path}>
-                  <NavLink
-                    to={path}
-                    className={({ isActive }) =>
-                      `hover:text-text-muted block py-2 pr-4 pl-3 border-b border-violet lg:hover:bg-transparent  cursor-pointer 
-                      ${
-                        isActive
-                          ? "text-text-muted border-b-2 border-violet"
-                          : "text-violet md:border-transparent"
-                      }`
-                    }
-                  >
+              {navItems.map(({ href, label, id }) => (
+                <li key={id}>
+                  <a href={href} className={navLinkClass(id)}>
                     {label}
-                  </NavLink>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
           {/* Mobile Nav */}
-          <div
-            className={`${
-              open ? "block" : "hidden"
-            } md:hidden justify-between w-full`}
-          >
-            <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0 text-violet">
-              {navItems.map(({ path, label }) => (
-                <li key={path}>
-                  <NavLink
-                    to={path}
+          {open && (
+          <div className="md:hidden absolute top-full left-0 w-full dark:bg-bg-dark bg-white shadow-lg border-t border-gray-200 dark:border-border z-50">
+            <ul className="mx-auto flex flex-col items-center font-medium px-4 py-2">
+              {navItems.map(({ href, label, id }) => (
+                <li key={id}>
+                  <a
+                    href={href}
                     onClick={() => setOpen(false)}
-                    className={({ isActive }) =>
-                      `hover:text-text-muted block py-2 pr-4 pl-3 border-b border-transparent cursor-pointer 
-                    ${isActive ? "text-text-muted" : "text-violet"}`
-                    }
+                    className={navLinkClass(id)}
                   >
                     {label}
-                  </NavLink>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
+        )}
           {/* dark mode toggle and hamburger */}
           <div className="flex items-center gap-3 md:order-2">
             <button
@@ -100,7 +120,6 @@ function Navbar() {
                   />
                 </svg>
               ) : (
-                
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

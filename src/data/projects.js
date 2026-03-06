@@ -3,13 +3,27 @@ export const projectData = [
         title: "Mini Projects",
         description: "A collection of small HTML, CSS, and JavaScript projects for practice.",
         liveLink: null,
-        githubLink: "https://github.com/vidhisonani/web-mini-projects"
-    }, 
+        githubLink: "https://github.com/vidhisonani/web-mini-projects",
+        subProjects: [
+            { name: "🌤️ Daily Weather", liveLink: null },
+            { name: "📝 To-Do List", liveLink: null },
+            { name: "⏰ Digital Clock", liveLink: "https://digitalclockbyvidhi.netlify.app/" },
+            { name: "💖 Heart Trail Animation", liveLink: "https://hearttrailbyvidhi.netlify.app/" },
+            { name: "🧮 Calculator", liveLink: "https://calculatorbyvidhi.netlify.app/" },
+            { name: "🎬 Netflix Home Page UI Clone", liveLink: null },
+        ],
+    },
     {
         title: "Mini React Projects",
         description: "A collection of small React projects built for practice and learning.",
         liveLink: null,
-        githubLink: "https://github.com/vidhisonani/mini-react-projects"
+        githubLink: "https://github.com/vidhisonani/mini-react-projects",
+        subProjects: [
+            { name: "💱 Currency Converter", liveLink: "https://currency-converter-vidhi.netlify.app/" },
+            { name: "🧩 Assembly: Endgame", liveLink: "https://assembly-endgame-vidhi.netlify.app/" },
+            { name: "🎲 Tenzies Game", liveLink: "https://tenzies-game-vidhi.netlify.app/" },
+            { name: "😂 Meme Generator", liveLink: "https://meme-generator-vidhi.netlify.app/" },
+        ],
     },
     {
         title: "Coffee Cafe",

@@ -62,9 +62,14 @@ function SkillCard({ card }) {
 
 function Skills() {
   return (
-    <div className="dark:bg-bg-dark min-h-screen py-16 px-6">
+    <section
+      id="skills"
+      className="scroll-mt-16 dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6"
+    >
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-violet mb-2">My Skills</h2>
+        <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
+          My Skills
+        </h2>
         <p className="text-text-muted text-base">
           Technologies & tools I work with
         </p>
@@ -74,7 +79,7 @@ function Skills() {
           <SkillCard key={card.title} card={card} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
