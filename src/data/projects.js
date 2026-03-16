@@ -24,13 +24,8 @@ export const projectData = [
             { name: "🧩 Assembly: Endgame", liveLink: "https://assembly-endgame-vidhi.netlify.app/" },
             { name: "🎲 Tenzies Game", liveLink: "https://tenzies-game-vidhi.netlify.app/" },
             { name: "😂 Meme Generator", liveLink: "https://meme-generator-vidhi.netlify.app/" },
+            { name: "☕ Coffee Cafe", liveLink: "https://coffee-cafe-by-vidhi.netlify.app/"}
         ],
-    },
-    {
-        title: "Coffee Cafe",
-        description: "Coffee Cafe is a frontend React project that represents a modern coffee shop website with smooth animations, a clean UI, and responsive design.",
-        liveLink: "https://coffee-cafe-by-vidhi.netlify.app/",
-        githubLink: "https://github.com/vidhisonani/coffee-cafe"
     },
     {
         title: "Chef Claude",
