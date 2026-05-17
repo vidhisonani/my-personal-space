@@ -9,6 +9,9 @@ import {
     SiWordpress,
     SiGit,
     SiGithub,
+    SiNodedotjs,
+    SiExpress,
+    SiVercel,
 
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc"
@@ -35,7 +38,9 @@ export const skillsData = [
             { name: "JavaScript", icon: SiJavascript, color: "#F0DB4F" },
             { name: "React", icon: SiReact, color: "#61DAFB" },
             { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8" },
-            { name: "WordPress", icon: SiWordpress, color: "#21759B" },
+            // { name: "WordPress", icon: SiWordpress, color: "#21759B" },
+            { name: "Node.js", icon: SiNodedotjs, color: "#68A063" },
+            { name: "Express", icon: SiExpress, color: null },
         ],
     },
     {
@@ -46,6 +51,7 @@ export const skillsData = [
             { name: "VS Code", icon: VscVscode, color: "#007ACC" },
             { name: "Git", icon: SiGit, color: "#F34F29" },
             { name: "GitHub", icon: SiGithub, color: null },
+            { name: "Vercel", icon: SiVercel, color: null },
         ],
     },
     {

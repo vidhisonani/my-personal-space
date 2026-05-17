@@ -29,8 +29,8 @@ export const projectData = [
     },
     {
         title: "Chef Claude",
-        description: "A frontend learning project exploring React, AI APIs to generate recipes from user provided ingredients.",
-        liveLink: null,
+        description: "Full-stack AI recipe generator built with React and Node.js + Express. Generates recipes from ingredients using Groq AI — with secure backend API handling.",
+        liveLink: "https://chef-claude-react-five.vercel.app",
         githubLink: "https://github.com/vidhisonani/chef-claude-react"
     },
 ]
