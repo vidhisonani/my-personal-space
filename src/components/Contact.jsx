@@ -124,6 +124,7 @@ function Contact() {
                   type="text"
                   name="name"
                   id="name"
+                  autoComplete="name"
                   placeholder="Your name"
                   value={formData.name}
                   onChange={handleChange}
@@ -142,6 +143,7 @@ function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email Address"
@@ -160,6 +162,7 @@ function Contact() {
                   name="message"
                   placeholder="Message"
                   rows="4"
+                  autoComplete="off"
                   value={formData.message}
                   onChange={handleChange}
                   required

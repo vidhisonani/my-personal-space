@@ -58,7 +58,7 @@ function Navbar() {
     }`;
 
   return (
-    <heaader data-aos="fade-down" data-aos-duration="600" className="shadow sticky z-50 top-0">
+    <header data-aos="fade-down" data-aos-duration="600" className="shadow sticky z-50 top-0">
       <nav className="dark:bg-bg-dark bg-white border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex justify-between items-center mx-auto max-w-screen-2xl">
           {/* Logo */}
@@ -140,7 +140,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-    </heaader>
+    </header>
   );
 }
 

@@ -1,18 +1,9 @@
 export const projectData = [
     {
-        title: "Mini Projects",
-        description: "A collection of small HTML, CSS, and JavaScript projects for practice.",
-        liveLink: null,
-        githubLink: "https://github.com/vidhisonani/web-mini-projects",
-        subProjects: [
-            { name: "🌐 Personal Portfolio — HTML CSS JS", liveLink: "https://portfolio-project-by-vidhi-patel.netlify.app/" },
-            { name: "🌤️ Daily Weather", liveLink: null },
-            { name: "📝 To-Do List", liveLink: null },
-            { name: "⏰ Digital Clock", liveLink: "https://digitalclockbyvidhi.netlify.app/" },
-            { name: "💖 Heart Trail Animation", liveLink: "https://hearttrailbyvidhi.netlify.app/" },
-            { name: "🧮 Calculator", liveLink: "https://calculatorbyvidhi.netlify.app/" },
-            { name: "🎬 Netflix Home Page UI Clone", liveLink: null },
-        ],
+        title: "Chef Claude",
+        description: "Full-stack AI recipe generator built with React and Node.js + Express. Generates recipes from ingredients using Groq AI — with secure backend API handling.",
+        liveLink: "https://chef-claude-react-five.vercel.app",
+        githubLink: "https://github.com/vidhisonani/chef-claude-react"
     },
     {
         title: "Mini React Projects",
@@ -28,9 +19,19 @@ export const projectData = [
         ],
     },
     {
-        title: "Chef Claude",
-        description: "Full-stack AI recipe generator built with React and Node.js + Express. Generates recipes from ingredients using Groq AI — with secure backend API handling.",
-        liveLink: "https://chef-claude-react-five.vercel.app",
-        githubLink: "https://github.com/vidhisonani/chef-claude-react"
+        title: "Mini Projects",
+        description: "A collection of small HTML, CSS, and JavaScript projects for practice.",
+        liveLink: null,
+        githubLink: "https://github.com/vidhisonani/web-mini-projects",
+        subProjects: [
+            { name: "🌐 Personal Portfolio — HTML CSS JS", liveLink: "https://portfolio-project-by-vidhi-patel.netlify.app/" },
+            { name: "🌤️ Daily Weather", liveLink: null },
+            { name: "📝 To-Do List", liveLink: null },
+            { name: "⏰ Digital Clock", liveLink: "https://digitalclockbyvidhi.netlify.app/" },
+            { name: "💖 Heart Trail Animation", liveLink: "https://hearttrailbyvidhi.netlify.app/" },
+            { name: "🧮 Calculator", liveLink: "https://calculatorbyvidhi.netlify.app/" },
+            { name: "🎬 Netflix Home Page UI Clone", liveLink: null },
+        ],
     },
+    
 ]
