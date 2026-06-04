@@ -1,6 +1,6 @@
 import React from "react";
 import { HiDownload } from "react-icons/hi";
-import profilePhoto from "../assets/profile.jpg";
+import profilePhoto from "../assets/profile.webp";
 
 function About() {
   return (
@@ -18,7 +18,7 @@ function About() {
           <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
             About Me
           </h2>
-          <p className="text-text-muted dark:text-text-muted text-base mt-2">
+          <p className="text-text-muted dark:text-text-main text-base mt-2">
             A little bit about who I am
           </p>
         </div>
@@ -51,12 +51,12 @@ function About() {
             <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
               Hi, I'm <span className="font-bold text-violet">Vidhi Patel</span>
               , a dedicated{" "}
-              <span className="italic text-text-muted dark:text-text-muted">
+              <span className="italic text-text-muted dark:text-text-main">
                 Computer Engineering student
               </span>{" "}
               with a strong passion for building modern web applications.
             </p>
-            <p className="text-text-muted dark:text-text-muted text-base leading-relaxed">
+            <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
               I enjoy crafting clean, responsive, and user-friendly interfaces
               using <span className="font-semibold text-violet">React</span>,{" "}
               <span className="font-semibold text-violet">Tailwind CSS</span>,
@@ -64,7 +64,7 @@ function About() {
               I love exploring new tools and frameworks through hands-on
               projects.
             </p>
-            <p className="text-text-muted dark:text-text-muted text-base leading-relaxed">
+            <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
               My goal is to grow as a developer by building innovative solutions
               that solve real-world problems while delivering excellent user
               experiences.

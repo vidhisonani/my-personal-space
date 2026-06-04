@@ -102,6 +102,7 @@ function Navbar() {
           <div className="flex items-center gap-3 md:order-2">
             <button
               onClick={toggleTheme}
+              aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
               className="rounded-full p-2 shadow-md shadow-purple-400 cursor-pointer transition-all ease-out"
             >
               {theme === "light" ? (

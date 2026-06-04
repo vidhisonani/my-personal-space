@@ -41,7 +41,7 @@ function Hero() {
       className="dark:bg-card-dark bg-gray-50 min-h-screen flex flex-col items-center justify-center px-6 text-center"
     >
       {/* Greeting */}
-      <p data-aos="fade-down" data-aos-duration="600" className="text-violet dark:text-text-muted text-lg mb-3 tracking-wide">
+      <p data-aos="fade-down" data-aos-duration="600" className="text-violet dark:text-text-main text-lg mb-3 tracking-wide">
         Hello, I'm
       </p>
 
@@ -60,7 +60,7 @@ function Hero() {
       </div>
 
       {/* Subtitle */}
-      <p data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" className="text-violet-light dark:text-text-muted text-base md:text-lg mb-8">
+      <p data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" className="text-violet-light dark:text-text-main text-base md:text-lg mb-8">
         Computer Engineering Student
       </p>
 
@@ -87,7 +87,7 @@ function Hero() {
           href="https://github.com/vidhisonani"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-violet dark:text-text-muted transition-all duration-300 hover:-translate-y-0.5"
+          className="text-violet dark:text-text-main transition-all duration-300 hover:-translate-y-0.5"
           aria-label="GitHub"
         >
           <FaGithub className="text-2xl" />
@@ -96,7 +96,7 @@ function Hero() {
           href="https://linkedin.com/in/vidhipatel73/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-violet dark:text-text-muted hover:text-violet transition-all duration-300 hover:-translate-y-0.5"
+          className="text-violet dark:text-text-main hover:text-violet transition-all duration-300 hover:-translate-y-0.5"
           aria-label="LinkedIn"
         >
           <FaLinkedin className="text-2xl" />

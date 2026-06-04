@@ -73,7 +73,7 @@ function Skills() {
         <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
           My Skills
         </h2>
-        <p className="text-text-muted text-base">
+        <p className="dark:text-text-main text-text-muted text-base">
           Technologies & tools I work with
         </p>
       </div>

@@ -40,7 +40,7 @@ function ProjectCard({ card, index }) {
       <div className="flex flex-col gap-2">
         {/* Title and Description */}
         <h2 className="text-violet font-bold text-xl">{card.title}</h2>
-        <p className="text-text-muted dark:text-text-muted text-sm leading-relaxed">
+        <p className="text-text-muted dark:text-text-main text-sm leading-relaxed">
           {card.description}
         </p>
       </div>
@@ -113,7 +113,7 @@ function Projects() {
         <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
           My Projects
         </h2>
-        <p className="text-text-muted text-base">Things I have built</p>
+        <p className="text-text-muted dark:text-text-main text-base">Things I have built</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {projectData.map((card, i) => (
