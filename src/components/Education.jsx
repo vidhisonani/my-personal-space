@@ -6,8 +6,8 @@ function Education() {
     return (
       <div
         data-aos={edu.side === "left" ? "fade-right" : "fade-left"}
-        data-aos-duration="700"
-        data-aos-delay={index * 1000}
+        data-aos-duration="600"
+        data-aos-delay={index * 100}
         className={`
         relative flex items-center gap-4 md:gap-0
         ${

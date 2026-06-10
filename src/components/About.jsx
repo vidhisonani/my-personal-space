@@ -69,6 +69,19 @@ function About() {
               that solve real-world problems while delivering excellent user
               experiences.
             </p>
+            <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
+              I also enjoy solving coding challenges on{" "}
+              <a
+                href="https://leetcode.com/u/vidhipatel07/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-violet hover:underline"
+              >
+                LeetCode
+              </a>
+              , which helps me strengthen my problem-solving and algorithmic
+              thinking.
+            </p>
 
             {/* Resume button */}
             <div className="flex justify-center md:justify-start mt-2">
