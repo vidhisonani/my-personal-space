@@ -6,6 +6,7 @@ function IconChip({ skill }) {
   return (
     <div className="flex flex-col items-center gap-1">
       <Icon
+        aria-label={skill.name}
         style={skill.color ? { color: skill.color } : {}}
         className={`text-3xl ${
           !skill.color ? "text-gray-800 dark:text-white" : ""

@@ -1,6 +1,7 @@
 export default function Hamburger({ open, setOpen }) {
   return (
     <button
+      aria-label="Toggle mobile menu"
       onClick={() => setOpen(!open)}
       className="md:hidden flex flex-col justify-around w-8 h-5"
     >
