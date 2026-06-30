@@ -53,24 +53,28 @@ function Navbar() {
     `block py-2 px-3 border-b cursor-pointer transition-all duration-200 hover:text-text-muted
     ${
       activeSection === id
-        ? "text-text-muted border-b-2 border-violet"
-        : "text-violet border-transparent"
+        ? "text-text-muted border-b-2 border-accent"
+        : "text-accent border-transparent"
     }`;
 
   return (
-    <header data-aos="fade-down" data-aos-duration="600" className="shadow sticky z-50 top-0">
+    <header
+      data-aos="fade-down"
+      data-aos-duration="600"
+      className="shadow sticky z-50 top-0"
+    >
       <nav className="dark:bg-bg-dark bg-white border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex justify-between items-center mx-auto max-w-screen-2xl">
           {/* Logo */}
           <a
             href="#"
-            className="flex items-center text-3xl font-semibold text-violet"
+            className="flex items-center text-3xl font-semibold text-accent"
           >
             Vidhi Patel
           </a>
           {/* Desktop Nav */}
           <div className="hidden md:flex justify-between w-full md:w-auto md:order-1">
-            <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0 text-violet">
+            <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0 text-accent">
               {navItems.map(({ href, label, id }) => (
                 <li key={id}>
                   <a href={href} className={navLinkClass(id)}>
@@ -82,28 +86,28 @@ function Navbar() {
           </div>
           {/* Mobile Nav */}
           {open && (
-          <div className="md:hidden absolute top-full left-0 w-full dark:bg-bg-dark bg-white shadow-lg border-t border-gray-200 dark:border-border z-50">
-            <ul className="mx-auto flex flex-col items-center font-medium px-4 py-2">
-              {navItems.map(({ href, label, id }) => (
-                <li key={id}>
-                  <a
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className={navLinkClass(id)}
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+            <div className="md:hidden absolute top-full left-0 w-full dark:bg-bg-dark bg-white shadow-lg border-t border-gray-200 dark:border-border z-50">
+              <ul className="mx-auto flex flex-col items-center font-medium px-4 py-2">
+                {navItems.map(({ href, label, id }) => (
+                  <li key={id}>
+                    <a
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      className={navLinkClass(id)}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           {/* dark mode toggle and hamburger */}
           <div className="flex items-center gap-3 md:order-2">
             <button
               onClick={toggleTheme}
               aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
-              className="rounded-full p-2 shadow-md shadow-purple-400 cursor-pointer transition-all ease-out"
+              className="rounded-full p-2 shadow-md shadow-text-muted dark:shadow-accent-light cursor-pointer transition-all ease-out"
             >
               {theme === "light" ? (
                 <svg
@@ -111,7 +115,7 @@ function Navbar() {
                   viewBox="0 0 24 24"
                   width="28"
                   height="28"
-                  color="#A78BFA"
+                  color="var(--color-accent-light)"
                   fill="none"
                 >
                   <defs />
@@ -126,7 +130,7 @@ function Navbar() {
                   viewBox="0 0 24 24"
                   width="28"
                   height="28"
-                  color="#8B5CF6"
+                  color="var(--color-accent)"
                   fill="none"
                 >
                   <defs />

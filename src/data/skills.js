@@ -65,7 +65,7 @@ export const skillsData = [
         title: "Core Subjects",
         cardIcon: FaBook,
         type: "pills",
-        colors: ["bg-violet/15 text-violet-light border-violet/30", "bg-cyan-500/15 text-cyan-400 border-cyan-400/30", "bg-orange-500/15 text-orange-400 border-orange-400/30", "bg-rose-500/15 text-rose-400 border-rose-400/30"],
+        colors: ["bg-accent/15 text-accent-light border-accent/30", "bg-cyan-500/15 text-cyan-400 border-cyan-400/30", "bg-orange-500/15 text-orange-400 border-orange-400/30", "bg-rose-500/15 text-rose-400 border-rose-400/30"],
         skills: ["Data Structures", "Algorithms", "OOP", "DBMS", "Operating Systems", "Software Engineering", "Computer Networks"],
     },
     {

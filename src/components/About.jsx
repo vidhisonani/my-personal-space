@@ -15,7 +15,7 @@ function About() {
           data-aos-duration="600"
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
+          <h2 className="text-4xl font-bold text-accent mb-2 inline-block border-b-2 border-transparent hover:border-accent">
             About Me
           </h2>
           <p className="text-text-muted dark:text-text-main text-base mt-2">
@@ -32,7 +32,7 @@ function About() {
         >
           {/* Photo */}
           <div className="flex-shrink-0">
-            <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-violet shadow-lg shadow-violet/30">
+            <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-accent shadow-lg shadow-accent/30">
               <img
                 src={profilePhoto}
                 alt="Vidhi Patel"
@@ -49,7 +49,7 @@ function About() {
             className="flex flex-col gap-5 text-center md:text-left"
           >
             <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
-              Hi, I'm <span className="font-bold text-violet">Vidhi Patel</span>
+              Hi, I'm <span className="font-bold text-accent">Vidhi Patel</span>
               , a dedicated{" "}
               <span className="italic text-text-muted dark:text-text-main">
                 Computer Engineering student
@@ -58,9 +58,9 @@ function About() {
             </p>
             <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
               I enjoy crafting clean, responsive, and user-friendly interfaces
-              using <span className="font-semibold text-violet">React</span>,{" "}
-              <span className="font-semibold text-violet">Tailwind CSS</span>,
-              and <span className="font-semibold text-violet">JavaScript</span>.
+              using <span className="font-semibold text-accent">React</span>,{" "}
+              <span className="font-semibold text-accent">Tailwind CSS</span>,
+              and <span className="font-semibold text-accent">JavaScript</span>.
               I love exploring new tools and frameworks through hands-on
               projects.
             </p>
@@ -75,7 +75,7 @@ function About() {
                 href="https://leetcode.com/u/vidhipatel07/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-violet hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
                 LeetCode
               </a>
@@ -88,7 +88,7 @@ function About() {
               <a
                 href="/resume.pdf"
                 download
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-violet text-white font-semibold text-sm hover:bg-violet-light transition-all duration-300 hover:shadow-lg hover:shadow-violet/30 hover:-translate-y-0.5 w-fit"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold text-sm hover:bg-accent-light transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 w-fit"
               >
                 <HiDownload className="text-base" />
                 Download Resume

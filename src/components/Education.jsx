@@ -23,16 +23,16 @@ function Education() {
             edu.side === "left" ? "md:pr-10" : "md:pl-10"
           }`}
         >
-          <div className="group dark:bg-card-dark bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1.5 hover:border-violet hover:shadow-lg hover:shadow-violet/20">
+          <div className="group dark:bg-card-dark bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20">
             {/* period */}
-            <span className="inline-block self-start text-xs font-semibold px-3 py-1 rounded-full bg-violet/10 text-violet-light border border-violet/40">
+            <span className="inline-block self-start text-xs font-semibold px-3 py-1 rounded-full bg-accent/10 text-accent-light border border-accent/40">
               {edu.period}
             </span>
             <div className="flex flex-col gap-1">
-              <h2 className="text-violet font-bold text-base leading-snug">
+              <h2 className="text-accent font-bold text-base leading-snug">
                 {edu.icon} {edu.degree}
               </h2>
-              <p className="text-violet-light text-sm font-semibold">
+              <p className="text-accent-light text-sm font-semibold">
                 {edu.institution}
               </p>
             </div>
@@ -46,7 +46,7 @@ function Education() {
             </p>
             {edu.extra && (
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-xs font-bold px-2 py-0.5 rounded bg-violet/15 text-violet-light border border-violet/40">
+                <span className="text-xs font-bold px-2 py-0.5 rounded bg-accent/15 text-accent-light border border-accent/40">
                   {edu.extra.label}
                 </span>
                 <span className="text-xs text-text-muted dark:text-text-muted">
@@ -64,11 +64,11 @@ function Education() {
         </div>
         {/*Timeline dot - desktop*/}
         <div className="hidden md:flex w-2/12 justify-center z-10">
-          <div className="w-4 h-4 rounded-full border-2 border-violet bg-gray-50 shadow-[0_0_10px_var(--color-violet)]" />
+          <div className="w-4 h-4 rounded-full border-2 border-accent bg-gray-50 shadow-[0_0_10px_var(--color-accent)]" />
         </div>
 
         {/* Timeline dot — mobile */}
-        <div className="md:hidden absolute left-[13px] top-6 w-4 h-4 rounded-full border-2 border-violet bg-gray-50 shadow-[0_0_8px_var(--color-violet)] z-10" />
+        <div className="md:hidden absolute left-[13px] top-6 w-4 h-4 rounded-full border-2 border-accent bg-gray-50 shadow-[0_0_8px_var(--color-accent)] z-10" />
 
         {/* Spacer */}
         <div className="hidden md:block w-5/12" />
@@ -85,7 +85,7 @@ function Education() {
         data-aos-duration="600"
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-bold text-violet mb-2 inline-block border-b-2 border-transparent hover:border-violet">
+        <h2 className="text-4xl font-bold text-accent mb-2 inline-block border-b-2 border-transparent hover:border-accent">
           Education
         </h2>
         <p className="text-text-muted text-base">My academic journey</p>
