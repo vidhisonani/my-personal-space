@@ -23,7 +23,7 @@ function Education() {
             edu.side === "left" ? "md:pr-10" : "md:pl-10"
           }`}
         >
-          <div className="group dark:bg-card-dark bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20">
+          <div className="group dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20">
             {/* period */}
             <span className="inline-block self-start text-xs font-semibold px-3 py-1 rounded-full bg-accent/10 text-accent-light border border-accent/40">
               {edu.period}

@@ -37,7 +37,7 @@ function ProjectCard({ card, index }) {
       data-aos="fade-up"
       data-aos-duration="600"
       data-aos-delay={index * 100}
-      className="group dark:bg-card-dark bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
+      className="group dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
     >
       <div className="flex flex-col gap-2">
         {/* Title and Description */}
@@ -45,13 +45,25 @@ function ProjectCard({ card, index }) {
         <p className="text-text-muted dark:text-text-main text-sm leading-relaxed">
           {card.description}
         </p>
+        {/* pills */}
+        {card.tags && card.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-1">
+            {card.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="text-xs px-2.5 py-1 rounded-full bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
       {/* Expanded sub-projects list */}
       {hasSubProjects && (
         <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            expanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${expanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="border-t border-border pt-3 flex flex-col">
             {card.subProjects.map((sub, i) => (
@@ -89,9 +101,8 @@ function ProjectCard({ card, index }) {
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-light transition-all duration-300"
           >
             <HiChevronDown
-              className={`text-base transition-transform duration-300 ${
-                expanded ? "rotate-180" : "rotate-0"
-              }`}
+              className={`text-base transition-transform duration-300 ${expanded ? "rotate-180" : "rotate-0"
+                }`}
             />
             {expanded ? "Hide Projects" : "View Projects"}
           </button>

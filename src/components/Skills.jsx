@@ -34,7 +34,7 @@ function SkillCard({ card, index }) {
       data-aos="fade-up"
       data-aos-duration="600"
       data-aos-delay={index * 100}
-      className="group dark:bg-card-dark bg-white border border-gray-400 dark:border-border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
+      className="group dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
     >
       {/* Card Header: title on left, react-icon on right */}
       <div className="flex justify-between items-start mb-5">
