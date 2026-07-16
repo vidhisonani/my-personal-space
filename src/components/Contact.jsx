@@ -29,6 +29,7 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -67,6 +68,28 @@ function Contact() {
     }
   };
 
+  const validateField = (name, value) => {
+    let error = "";
+    if (name === "name" && !value.trim()) {
+      error = "Name is required";
+    }
+    if (name === "email") {
+      if (!value.trim()) {
+        error = "Email is required";
+      } else if (!/\S+@\S+\.\S+/.test(value)) {
+        error = "Invalid email address";
+      }
+    }
+    if (name === "message" && !value.trim()) {
+      error = "Message is required";
+    }
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  };
+
+  const handleBlur = (e) => {
+    validateField(e.target.name, e.target.value);
+  };
+
   useEffect(() => {
     if (status === "success") {
       const timer = setTimeout(() => setStatus(""), 3000);
@@ -80,7 +103,7 @@ function Contact() {
         <div
           data-aos="zoom-in"
           data-aos-duration="700"
-          className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-linear-to-br from-accent via-accent-light to-accent-dark w-[90vw] max-w-4xl p-8 rounded-xl shadow-lg text-white"
+          className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-linear-to-br from-accent via-accent-light to-accent-dark w-[90vw] max-w-5xl p-8 rounded-xl shadow-lg text-white"
         >
           <div
             data-aos="fade-right"
@@ -121,7 +144,7 @@ function Contact() {
             data-aos="fade-left"
             data-aos-duration="700"
             data-aos-delay="200"
-            className="bg-white rounded-xl shadow-lg p-8 md:w-[65%]"
+            className="bg-white rounded-xl shadow-lg p-8 md:w-[75%]"
           >
             <form
               onSubmit={handleSubmit}
@@ -140,6 +163,7 @@ function Contact() {
                   autoComplete="name"
                   placeholder="Your name"
                   value={formData.name}
+                  onBlur={handleBlur}
                   onChange={handleChange}
                   className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-accent"
                 />
@@ -158,6 +182,7 @@ function Contact() {
                   name="email"
                   autoComplete="email"
                   value={formData.email}
+                  onBlur={handleBlur}
                   onChange={handleChange}
                   placeholder="Email Address"
                   className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-accent"
@@ -177,6 +202,7 @@ function Contact() {
                   rows="4"
                   autoComplete="off"
                   value={formData.message}
+                  onBlur={handleBlur}
                   onChange={handleChange}
                   required
                   className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-accent"

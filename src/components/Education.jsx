@@ -10,28 +10,35 @@ function Education() {
         data-aos-delay={index * 100}
         className={`
         relative flex items-center gap-4 md:gap-0
-        ${
-          edu.side === "left"
+        ${edu.side === "left"
             ? "md:flex-row pl-12 md:pl-0"
             : "md:flex-row-reverse pl-12 md:pl-0"
-        }
+          }
       `}
       >
         {/* card */}
         <div
-          className={`w-full md:w-5/12 ${
-            edu.side === "left" ? "md:pr-10" : "md:pl-10"
-          }`}
+          className={`w-full md:w-5/12 ${edu.side === "left" ? "md:pr-10" : "md:pl-10"
+            }`}
         >
           <div className="group dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20">
-            {/* period */}
-            <span className="inline-block self-start text-xs font-semibold px-3 py-1 rounded-full bg-accent/10 text-accent-light border border-accent/40">
-              {edu.period}
-            </span>
+            {/* period and icon*/}
+            <div className="flex items-center gap-2 mb-1 justify-between">
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10 border border-accent/30 shrink-0">
+                <edu.icon className="text-accent text-lg" />
+              </div>
+              <span className="inline-block self-start text-xs font-semibold px-3 py-1 rounded-full bg-accent/10 text-accent-light border border-accent/40">
+                {edu.period}
+              </span>
+            </div>
             <div className="flex flex-col gap-1">
-              <h2 className="text-accent font-bold text-base leading-snug">
-                {edu.icon} {edu.degree}
-              </h2>
+              <div className="flex items-center gap-2 mb-1 justify-between">
+                <div className="flex items-center gap-2">
+                  <h2 className="text-accent font-bold text-base leading-snug">
+                    {edu.degree}
+                  </h2>
+                </div>
+              </div>
               <p className="text-accent-light text-sm font-semibold">
                 {edu.institution}
               </p>

@@ -57,12 +57,15 @@ function About() {
               with a strong passion for building modern web applications.
             </p>
             <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
-              I enjoy crafting clean, responsive, and user-friendly interfaces
-              using <span className="font-semibold text-accent">React</span>,{" "}
+              I enjoy building full-stack applications using the{" "}
+              <span className="font-semibold text-accent">MERN stack</span> —
+              crafting clean, responsive interfaces with{" "}
+              <span className="font-semibold text-accent">React</span> and{" "}
               <span className="font-semibold text-accent">Tailwind CSS</span>,
-              and <span className="font-semibold text-accent">JavaScript</span>.
-              I love exploring new tools and frameworks through hands-on
-              projects.
+              while handling data and logic on the backend with{" "}
+              <span className="font-semibold text-accent">Node.js</span>,{" "}
+              <span className="font-semibold text-accent">Express</span>, and{" "}
+              <span className="font-semibold text-accent">MongoDB</span>.
             </p>
             <p className="text-text-muted dark:text-text-main text-base leading-relaxed">
               My goal is to grow as a developer by building innovative solutions
