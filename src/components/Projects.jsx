@@ -5,7 +5,7 @@ import { HiExternalLink, HiChevronDown } from "react-icons/hi";
 
 function SubProjectRow({ sub }) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center gap-2 justify-between py-2 border-b border-border last:border-0 md:last:border-b">
+    <div className="flex flex-row gap-2 justify-between py-2 border-b border-border last:border-0 md:last:border-b">
       <div className="flex items-center gap-2">
         <span className="text-sm text-accent dark:text-text-muted">
           {sub.name}
@@ -30,7 +30,7 @@ function SubProjectRow({ sub }) {
             className="flex items-center gap-1.5 text-xs px-3 py-1 rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-300"
           >
             <HiExternalLink className="text-sm" />
-            Live Demo
+            <p className="hidden lg:block"> Live Demo</p>
           </a>
         ) : (
           <span className="text-xs px-3 py-1 rounded-lg border border-border text-text-muted dark:text-text-muted">
@@ -51,13 +51,13 @@ function FeaturedProjectCard({ card, index }) {
       className="group dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl overflow-hidden flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
     >
       {card.video ? (
-        <div className="w-full h-55 overflow-hidden bg-gray-100 dark:bg-black/20">
+        <div className="w-full h-48 overflow-hidden bg-gray-100 dark:bg-black/20">
           <video autoPlay loop muted playsInline className="w-full h-full object-cover object-top">
             <source src={card.video} type="video/mp4" />
           </video>
         </div>
       ) : card.image ? (
-        <div className="w-full h-55 overflow-hidden bg-gray-100 dark:bg-black/20">
+        <div className="w-full h-48 overflow-hidden bg-gray-100 dark:bg-black/20">
           <img
             src={card.image}
             alt={`${card.title} preview`}

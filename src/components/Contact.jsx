@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdOutlineEmail, MdError, MdCheckCircle } from "react-icons/md";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
@@ -151,77 +151,123 @@ function Contact() {
               noValidate
               className="text-accent flex flex-col space-y-4 "
             >
+              {/* Status Messages */}
+              {status === "success" && (
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="flex items-center gap-2 px-4 py-3 rounded-lg bg-green-50 border border-green-200 text-green-700 text-sm font-medium"
+                >
+                  <MdCheckCircle size={20} className="shrink-0" />
+                  Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {status === "error" && (
+                <div
+                  role="alert"
+                  aria-live="assertive"
+                  className="flex items-center gap-2 px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm font-medium"
+                >
+                  <MdError size={20} className="shrink-0" />
+                  Something went wrong. Please try again.
+                </div>
+              )}
               <div>
                 <label htmlFor="name" className="text-md font-semibold">
                   Your name
                 </label>
-                <input
-                  required
-                  type="text"
-                  name="name"
-                  id="name"
-                  autoComplete="name"
-                  placeholder="Your name"
-                  value={formData.name}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-accent"
-                />
+                <div className="relative mt-2">
+                  <input
+                    required
+                    type="text"
+                    name="name"
+                    id="name"
+                    autoComplete="name"
+                    placeholder="Your name"
+                    value={formData.name}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    className={`ring-1 w-full rounded-md px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.name ? "ring-red-500" : "ring-gray-300"
+                      }`}
+                  />
+                  {errors.name && (
+                    <MdError
+                      size={20}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-red-500 pointer-events-none"
+                    />
+                  )}
+                </div>
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  <div role="alert" aria-live="polite" className="flex items-center gap-2 px-2 py-1 mt-1 text-sm text-red-600">
+                    <MdError size={18} className="shrink-0" />
+                    {errors.name}
+                  </div>
                 )}
               </div>
               <div>
                 <label htmlFor="email" className="text-md font-semibold">
                   Email Address
                 </label>
-                <input
-                  required
-                  type="email"
-                  id="email"
-                  name="email"
-                  autoComplete="email"
-                  value={formData.email}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  placeholder="Email Address"
-                  className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-accent"
-                />
+                <div className="relative mt-2">
+                  <input
+                    required
+                    type="email"
+                    id="email"
+                    name="email"
+                    autoComplete="email"
+                    value={formData.email}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    placeholder="Email Address"
+                    className={`ring-1 w-full rounded-md px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.email ? "ring-red-500" : "ring-gray-300"
+                      }`}
+                  />
+                  {errors.email && (
+                    <MdError
+                      size={20}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-red-500 pointer-events-none"
+                    />
+                  )}
+                </div>
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  <div role="alert" aria-live="polite" className="flex items-center gap-2 px-2 py-1 mt-1 text-sm text-red-600">
+                    <MdError size={18} className="shrink-0" />
+                    {errors.email}
+                  </div>
                 )}
               </div>
               <div>
                 <label htmlFor="message" className="text-md font-semibold">
                   Message
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Message"
-                  rows="4"
-                  autoComplete="off"
-                  value={formData.message}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  required
-                  className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-accent"
-                />
+                <div className="relative mt-2">
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Message"
+                    rows="4"
+                    autoComplete="off"
+                    value={formData.message}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    className={`ring-1 w-full rounded-md px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.message ? "ring-red-500" : "ring-gray-300"
+                      }`}
+                  />
+                  {errors.message && (
+                    <MdError
+                      size={20}
+                      className="absolute right-3 top-3 text-red-500 pointer-events-none"
+                    />
+                  )}
+                </div>
                 {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                  <div role="alert" aria-live="polite" className="flex items-center gap-2 px-2 py-1 mt-1 text-sm text-red-600">
+                    <MdError size={18} className="shrink-0" />
+                    {errors.message}
+                  </div>
                 )}
-              </div>{" "}
-              {/* Status Messages */}
-              {status === "success" && (
-                <p className="text-green-600 font-medium">
-                  Message sent successfully 🎉
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-red-600 font-medium">
-                  Something went wrong. Try again.
-                </p>
-              )}
+              </div>
               <button
                 type="submit"
                 disabled={isSubmitting}
