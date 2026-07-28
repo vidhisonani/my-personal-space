@@ -28,6 +28,10 @@
   --color-text-muted: #8a93a6;
 
   --color-border: #2a3652;
+
+  /* --font-heading: "Exo", sans-serif; */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 * {
@@ -37,6 +41,13 @@
 html,
 body {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
