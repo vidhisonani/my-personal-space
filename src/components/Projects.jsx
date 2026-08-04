@@ -12,6 +12,13 @@ function SubProjectRow({ sub }) {
         </span>
       </div>
       <div className="flex items-center gap-2">
+        {sub.tech && sub.tech.length > 0 && (
+          <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-accent hover:bg-accent transition-all duration-300">
+            {sub.tech.map((t, i) => (
+              <t.icon key={i} size={16} style={{ color: t.color }} />
+            ))}
+          </div>
+        )}
         {sub.githubLink && (
           <a
             href={sub.githubLink}
@@ -52,7 +59,13 @@ function FeaturedProjectCard({ card, index }) {
     >
       {card.video ? (
         <div className="w-full h-48 overflow-hidden bg-gray-100 dark:bg-black/20">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover object-top">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-top"
+          >
             <source src={card.video} type="video/mp4" />
           </video>
         </div>
@@ -129,11 +142,11 @@ function MiniProjectsCard({ card }) {
           </p>
         </div>
         {card.tags && card.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-3 gap-2">
             {card.tags.map((tag, i) => (
               <span
                 key={i}
-                className="text-xs px-2.5 py-1 rounded-full bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light font-medium"
+                className="text-xs px-2 py-1 text-center rounded-full bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light font-medium"
               >
                 {tag}
               </span>
@@ -158,7 +171,8 @@ function MiniProjectsCard({ card }) {
           className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-light transition-all duration-300 cursor-pointer "
         >
           <HiChevronDown
-            className={`text-base transition-transform duration-300 ${expanded ? "rotate-180" : "rotate-0"}`}
+            className={`text-base transition-transform duration-300 ${expanded ? "rotate-180" : "rotate-0"
+              }`}
           />
           {expanded ? "Hide Projects" : "View Projects"}
         </button>
@@ -176,7 +190,11 @@ function Projects() {
       id="projects"
       className="scroll-mt-16 dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6"
     >
-      <div data-aos="fade-down" data-aos-duration="600" className="text-center mb-12">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="600"
+        className="text-center mb-12"
+      >
         <h2 className="text-4xl font-bold text-accent mb-2 inline-block border-b-2 border-transparent hover:border-accent">
           My Projects
         </h2>

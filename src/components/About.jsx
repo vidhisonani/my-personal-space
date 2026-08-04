@@ -6,7 +6,7 @@ function About() {
   return (
     <section
       id="about"
-      className="dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6 flex items-center"
+      className="scroll-mt-16 dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6 flex items-center"
     >
       <div className="max-w-5xl mx-auto w-full">
         {/* Header */}

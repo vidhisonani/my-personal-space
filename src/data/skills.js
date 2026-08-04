@@ -11,6 +11,8 @@ import {
     SiExpress,
     SiVercel,
     SiPostman,
+    SiTypescript,
+    SiMongodb,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc"
 import { FaJava, FaCode, FaGlobe, FaTools, FaCss3Alt } from "react-icons/fa";
@@ -33,10 +35,12 @@ export const skillsData = [
             { name: "HTML", icon: SiHtml5, color: "#E44D26" },
             { name: "CSS", icon: FaCss3Alt, color: "#1572B6" },
             { name: "JavaScript", icon: SiJavascript, color: "#F0DB4F" },
+            { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
             { name: "React", icon: SiReact, color: "#61DAFB" },
             { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8" },
             { name: "Node.js", icon: SiNodedotjs, color: "#68A063" },
             { name: "Express", icon: SiExpress, color: null },
+            { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
         ],
     },
     {
@@ -46,7 +50,7 @@ export const skillsData = [
             { name: "VS Code", icon: VscVscode, color: "#007ACC" },
             { name: "Git", icon: SiGit, color: "#F34F29" },
             { name: "GitHub", icon: SiGithub, color: null },
-            { name: "Vercel", icon: SiVercel, color: null },
+            // { name: "Vercel", icon: SiVercel, color: null },
             { name: "Postman", icon: SiPostman, color: "#FF6C37" },
         ],
     },
