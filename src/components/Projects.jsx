@@ -58,7 +58,7 @@ function FeaturedProjectCard({ card, index }) {
       className="group dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl overflow-hidden flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
     >
       {card.video ? (
-        <div className="w-full h-48 overflow-hidden bg-gray-100 dark:bg-black/20">
+        <div className="w-full h-full overflow-hidden bg-gray-100 dark:bg-black/20">
           <video
             autoPlay
             loop
@@ -70,7 +70,7 @@ function FeaturedProjectCard({ card, index }) {
           </video>
         </div>
       ) : card.image ? (
-        <div className="w-full h-48 overflow-hidden bg-gray-100 dark:bg-black/20">
+        <div className="w-full h-full overflow-hidden bg-gray-100 dark:bg-black/20">
           <img
             src={card.image}
             alt={`${card.title} preview`}

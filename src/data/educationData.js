@@ -7,7 +7,7 @@ export const educationData = [
         degree: "Bachelor of Engineering in Computer Engineering",
         institution: "L.D. College of Engineering, Ahmedabad",
         description: "Building a strong foundation in data structures, algorithms, and software engineering, while working on real-world full-stack projects alongside coursework.",
-        result: "8.78 (Till Sem 5)",
+        result: "8.82 (Till Sem 6)",
         side: "left"
     },
     {

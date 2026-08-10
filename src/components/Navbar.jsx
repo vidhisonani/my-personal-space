@@ -42,12 +42,12 @@ function Navbar() {
   }, []);
 
   const navItems = [
-    { href: "#home", label: "Home", id: "home" },
-    { href: "#about", label: "About", id: "about" },
-    { href: "#skills", label: "Skills", id: "skills" },
-    { href: "#education", label: "Education", id: "education" },
-    { href: "#projects", label: "Projects", id: "projects" },
-    { href: "#contact", label: "Contact", id: "contact" },
+    { href: "/#home", label: "Home", id: "home" },
+    { href: "/#about", label: "About", id: "about" },
+    { href: "/#skills", label: "Skills", id: "skills" },
+    { href: "/#education", label: "Education", id: "education" },
+    { href: "/#projects", label: "Projects", id: "projects" },
+    { href: "/#contact", label: "Contact", id: "contact" },
   ];
   const navLinkClass = (id) =>
     `block py-2 px-3 border-b cursor-pointer transition-all duration-200 hover:text-text-muted

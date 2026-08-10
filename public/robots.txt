@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vidhipatel-portfolio.vercel.app/sitemap.xml

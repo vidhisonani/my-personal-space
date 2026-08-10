@@ -64,9 +64,11 @@ my-personal-space/
 │   │   └── educationData.js
 │   ├── pages/
 │   │   └── Home.jsx
+│   │   └── NotFound.jsx
 │   ├── Layout.jsx
 │   └── App.jsx
 └── package.json
+└── vercel.json
 ```
 
 ---
@@ -123,8 +125,8 @@ A full-stack bill-splitting app that eliminates awkward math. Split expenses wit
 **Stack:** React, Node.js, Express, MongoDB
 
 ### [Chef Claude](https://chef-claude-react-five.vercel.app) — AI Recipe Generator
-A full-stack recipe generator that creates recipes from a list of ingredients using Groq AI, with secure backend API handling.
-**Stack:** React, Node.js, Express, Groq AI
+A full-stack AI recipe generator with Google OAuth, MongoDB, and Groq AI. Features recipe history, favourites, PDF export, and secure backend API handling.
+**Stack:** React, Node.js, Express, MongoDB, Groq AI
 
 Additional mini projects (React practice builds and vanilla JS/HTML/CSS projects) are showcased within the Projects section of the site.
 
