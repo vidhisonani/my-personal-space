@@ -70,7 +70,8 @@ function Navbar() {
             href="#"
             className="flex items-center text-3xl font-semibold text-accent"
           >
-            Vidhi Patel
+            <span className="md:hidden lg:block">Vidhi Patel</span>
+            <span className="hidden md:block lg:hidden">VP</span>
           </a>
           {/* Desktop Nav */}
           <div className="hidden md:flex justify-between w-full md:w-auto md:order-1">

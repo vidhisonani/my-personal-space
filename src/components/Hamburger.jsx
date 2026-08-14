@@ -1,22 +1,17 @@
+import { HiMenu, HiX } from "react-icons/hi";
+
 export default function Hamburger({ open, setOpen }) {
   return (
     <button
       aria-label="Toggle mobile menu"
       onClick={() => setOpen(!open)}
-      className="md:hidden flex flex-col justify-around w-8 h-5"
+      className="md:hidden flex flex-col justify-around"
     >
-      <span
-        className={`h-[3px] w-full bg-accent rounded-lg transition-all duration-200
-      ${open ? "translate-y-[6px]" : ""}`}
-      />
-      <span
-        className={`h-[3px] w-full bg-accent rounded-lg transition-all duration-200
-      ${open ? "opacity-0" : ""}`}
-      />
-      <span
-        className={`h-[3px] w-full bg-accent rounded-lg transition-all duration-200
-      ${open ? "-translate-y-[6px]" : ""}`}
-      />
+      {open ? (
+        <HiX className="text-3xl text-accent" />
+      ) : (
+        <HiMenu className="text-3xl text-accent" />
+      )}
     </button>
   );
 }
