@@ -1,46 +1,129 @@
 import React, { useState } from "react";
 import { projectData } from "../data/projects";
-import { FaGithub } from "react-icons/fa";
-import { HiExternalLink, HiChevronDown } from "react-icons/hi";
+import { ChevronDown, ArrowRight, ExternalLink } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
 
-function SubProjectRow({ sub }) {
+function WorkItem({ card, index }) {
+  const number = String(index + 1).padStart(2, "0");
+
   return (
-    <div className="flex flex-row gap-2 justify-between py-2 border-b border-border last:border-0 md:last:border-b">
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-accent dark:text-text-muted">
-          {sub.name}
-        </span>
-      </div>
-      <div className="flex items-center gap-2">
-        {sub.tech && sub.tech.length > 0 && (
-          <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-accent hover:bg-accent transition-all duration-300">
-            {sub.tech.map((t, i) => (
-              <t.icon key={i} size={16} style={{ color: t.color }} />
+    <article
+      data-aos="fade-up"
+      data-aos-duration="600"
+      data-aos-delay={index * 100}
+      className="group border border-border bg-card overflow-hidden transition-all duration-300 hover:border-accent hover:-translate-y-1"
+    >
+      <div className="p-6 md:p-8">
+        {/* Project Number */}
+        <div className="font-mono-label text-accent mb-4">
+          {number} / built with care
+        </div>
+
+        <h3 className="font-heading text-[28px] md:text-[35px] leading-none text-text-main">
+          {card.title.split(" - ")[0]}
+        </h3>
+
+        {card.title.split(" - ")[1] && (
+          <div className="font-mono-label text-accent mt-2">
+            {card.title.split(" - ")[1]}
+          </div>
+        )}
+
+        <p className="text-text-muted text-sm leading-[1.7] mt-5 mb-4">
+          {card.description}
+        </p>
+
+        {card.tags && card.tags.length > 0 && (
+          <div className="flex flex-wrap gap-x-3 gap-y-2">
+            {card.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-text-muted border-b border-border pb-0.5 font-mono text-[10px]"
+              >
+                {tag}
+              </span>
             ))}
           </div>
         )}
+
+        <div className="mt-6 pt-4 border-t border-border flex flex-wrap items-center gap-5">
+          {card.githubLink && (
+            <a
+              href={card.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${card.title} on GitHub`}
+              className="inline-flex items-center gap-1.5 text-accent font-mono-label hover:text-accent-light hover:underline transition-colors duration-200"
+            >
+              <FiGithub size={16} />
+              GitHub
+            </a>
+          )}
+
+          {card.liveLink && (
+            <a
+              href={card.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${card.title} live demo`}
+              className="inline-flex items-center gap-1.5 text-accent font-mono-label hover:text-accent-light hover:underline transition-colors duration-200"
+            >
+              <ExternalLink size={15} />
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function SubProjectRow({ sub }) {
+  return (
+    <div className="flex items-center justify-between gap-3 py-2.5 border-b border-border ">
+      <div className="flex items-center gap-2 min-w-0">
+        <span className="font-mono text-[11px] text-text-main truncate">
+          {sub.name}
+        </span>
+      </div>
+
+      <div className="flex items-center gap-1.5 shrink-0">
+        {sub.tech && sub.tech.length > 0 && (
+          <div className="flex items-center gap-1 px-2 py-1 h-[27px] border border-border">
+            {sub.tech.map((t, i) => (
+              <t.icon
+                key={i}
+                size={15}
+                style={{ color: t.color }}
+              />
+            ))}
+          </div>
+        )}
+
         {sub.githubLink && (
           <a
             href={sub.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-lg border border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
+            aria-label={`Open ${sub.name} code on GitHub`}
+            className="w-[27px] h-[27px] flex items-center justify-center border border-border text-text-muted hover:border-accent hover:text-accent transition-colors duration-200"
           >
-            <FaGithub className="text-sm" />
+            <FiGithub size={15} />
           </a>
         )}
+
         {sub.liveLink ? (
           <a
             href={sub.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs px-3 py-1 rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-300"
+            aria-label={`Open ${sub.name} demo`}
+            className="w-[27px] h-[27px] border border-border flex items-center justify-center text-accent hover:border-accent hover:text-accent transition-colors duration-200"
           >
-            <HiExternalLink className="text-sm" />
-            <p className="hidden lg:block"> Live Demo</p>
+            <ExternalLink size={15} />
           </a>
         ) : (
-          <span className="text-xs px-3 py-1 rounded-lg border border-border text-text-muted dark:text-text-muted">
+          <span className="text-[9px] px-2 py-1 border border-border text-text-muted font-mono">
             No Demo
           </span>
         )}
@@ -49,48 +132,36 @@ function SubProjectRow({ sub }) {
   );
 }
 
-function FeaturedProjectCard({ card, index }) {
+function MiniProjects({ card }) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <div
       data-aos="fade-up"
       data-aos-duration="600"
-      data-aos-delay={index * 100}
-      className="group dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl overflow-hidden flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
+      className="border border-border bg-card p-6"
     >
-      {card.video ? (
-        <div className="w-full h-full overflow-hidden bg-gray-100 dark:bg-black/20">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover object-top"
-          >
-            <source src={card.video} type="video/mp4" />
-          </video>
-        </div>
-      ) : card.image ? (
-        <div className="w-full h-full overflow-hidden bg-gray-100 dark:bg-black/20">
-          <img
-            src={card.image}
-            alt={`${card.title} preview`}
-            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-        </div>
-      ) : null}
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-4 border-b border-border">
+        <div>
+          <div className="font-mono-label text-accent">
+            the margins are growing
+          </div>
 
-      <div className="flex flex-col gap-2 px-6">
-        <h2 className="text-accent font-bold text-xl">{card.title}</h2>
-        <p className="text-text-muted dark:text-text-main text-sm leading-relaxed">
-          {card.description}
-        </p>
+          <h3 className="font-heading text-2xl font-semibold mt-1 mb-1 text-text-main">
+            {card.title}
+          </h3>
+
+          <p className="text-text-muted text-xs">
+            {card.description}
+          </p>
+        </div>
+
         {card.tags && card.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-1">
-            {card.tags.map((tag, i) => (
+          <div className="flex flex-wrap gap-1.5 md:justify-end md:max-w-[270px]">
+            {card.tags.map((tag) => (
               <span
-                key={i}
-                className="text-xs px-2.5 py-1 rounded-full bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light font-medium"
+                key={tag}
+                className="bg-card-alt text-text-muted px-2 py-1.5 font-mono text-[10px]"
               >
                 {tag}
               </span>
@@ -99,26 +170,51 @@ function FeaturedProjectCard({ card, index }) {
         )}
       </div>
 
-      <div className="flex-1" />
-      <div className="flex gap-3 mt-2 px-6 pb-6">
-        <a
-          href={card.githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 rounded-lg border border-accent text-accent text-sm font-medium hover:bg-accent hover:text-white transition-all duration-300"
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          expanded
+            ? "max-h-[600px] opacity-100"
+            : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-x-8">
+          {card.subProjects.map((sub, i) => (
+            <SubProjectRow
+              key={i}
+              sub={sub}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex justify-between items-center gap-4 pt-4">
+        <button
+          onClick={() => setExpanded((prev) => !prev)}
+          className="flex items-center gap-2 px-4 py-2 bg-accent text-white font-mono-label cursor-pointer hover:bg-accent-dark transition-colors duration-300"
         >
-          <FaGithub className="text-base" />
-          View Code
-        </a>
-        {card.liveLink && (
+          <ChevronDown
+            size={14}
+            className={`transition-transform duration-300 ${
+              expanded
+                ? "rotate-180"
+                : "rotate-0"
+            }`}
+          />
+
+          {expanded
+            ? "Hide Projects"
+            : "View Projects"}
+        </button>
+
+        {card.githubLink && (
           <a
-            href={card.liveLink}
+            href={card.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-light transition-all duration-300"
+            className="inline-flex items-center gap-2 text-accent font-mono-label hover:underline"
           >
-            <HiExternalLink className="text-base" />
-            Live Demo
+            Browse GitHub
+            <ArrowRight size={14} />
           </a>
         )}
       </div>
@@ -126,91 +222,52 @@ function FeaturedProjectCard({ card, index }) {
   );
 }
 
-function MiniProjectsCard({ card }) {
-  const [expanded, setExpanded] = useState(false);
-  return (
-    <div
-      data-aos="fade-up"
-      data-aos-duration="600"
-      className="dark:bg-card bg-white border border-gray-400 dark:border-border rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:border-accent hover:shadow-lg hover:shadow-accent/20"
-    >
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <div>
-          <h2 className="text-accent font-bold text-xl">{card.title}</h2>
-          <p className="text-text-muted dark:text-text-main text-sm leading-relaxed mt-1">
-            {card.description}
-          </p>
-        </div>
-        {card.tags && card.tags.length > 0 && (
-          <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-3 gap-2">
-            {card.tags.map((tag, i) => (
-              <span
-                key={i}
-                className="text-xs px-2 py-1 text-center rounded-full bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out 
-        ${expanded ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}
-      >
-        <div className="border-t border-border pt-3 grid grid-cols-1 md:grid-cols-2 gap-x-8">
-          {card.subProjects.map((sub, i) => (
-            <SubProjectRow key={i} sub={sub} />
-          ))}
-        </div>
-      </div>
-
-      <div className="flex gap-3">
-        <button
-          onClick={() => setExpanded((prev) => !prev)}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-light transition-all duration-300 cursor-pointer "
-        >
-          <HiChevronDown
-            className={`text-base transition-transform duration-300 ${expanded ? "rotate-180" : "rotate-0"
-              }`}
-          />
-          {expanded ? "Hide Projects" : "View Projects"}
-        </button>
-      </div>
-    </div>
-  );
-}
-
 function Projects() {
-  const featured = projectData.filter((p) => !p.subProjects);
-  const miniProjects = projectData.find((p) => p.subProjects);
+  const featured = projectData.filter(
+    (p) => !p.subProjects
+  );
+
+  const miniProjects = projectData.find(
+    (p) => p.subProjects
+  );
 
   return (
     <section
       id="projects"
-      className="scroll-mt-16 dark:bg-card-dark bg-gray-50 min-h-screen py-16 px-6"
+      className="bg-bg py-20 md:py-28 border-t border-border"
     >
-      <div
-        data-aos="fade-down"
-        data-aos-duration="600"
-        className="text-center mb-12"
-      >
-        <h2 className="text-4xl font-bold text-accent mb-2 inline-block border-b-2 border-transparent hover:border-accent">
-          My Projects
-        </h2>
-        <p className="text-text-muted dark:text-text-main text-base">
-          Things I have built
-        </p>
-      </div>
+      <div className="w-[min(1120px,calc(100%-48px))] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[185px_1fr] gap-9 mb-14">
+          <p className="font-mono-label text-accent pt-2.5">
+            03 / evidence
+          </p>
 
-      <div className="max-w-5xl mx-auto flex flex-col gap-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2 className="font-heading font-medium text-[39px] md:text-[70px] leading-[0.97] tracking-[-0.07em] max-w-[690px]">
+            The things I make
+            <br />
+            <span className="text-text-muted">
+              tell the story back.
+            </span>
+          </h2>
+        </div>
+
+        <div className="flex flex-col gap-5">
           {featured.map((card, i) => (
-            <FeaturedProjectCard key={card.title} card={card} index={i} />
+            <WorkItem
+              key={card.title}
+              card={card}
+              index={i}
+            />
           ))}
         </div>
 
-        {miniProjects && <MiniProjectsCard card={miniProjects} />}
+        {miniProjects && (
+          <div className="mt-6">
+            <MiniProjects
+              card={miniProjects}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

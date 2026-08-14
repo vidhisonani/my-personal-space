@@ -3,7 +3,6 @@ import Skills from "../components/Skills"
 import Projects from "../components/Projects"
 import About from "../components/About"
 import Contact from '../components/Contact'
-import Education from '../components/Education'
 
 function Home() {
   return (
@@ -11,7 +10,6 @@ function Home() {
       <Hero />
       <About />
       <Skills />
-      <Education />
       <Projects />
       <Contact />
     </>

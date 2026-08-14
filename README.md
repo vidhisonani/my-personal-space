@@ -12,11 +12,10 @@ A modern, responsive personal portfolio built with React and Tailwind CSS, showc
 - **Dark / Light mode** with persisted theme preference (`localStorage`)
 - **Animated hero section** with a typing effect cycling through roles
 - **Scroll-based navigation** with active section highlighting
-- **Skills section** with categorized tech stacks and interactive icon chips
+- **Skills section** with categorized tech stacks
 - **Projects section**
-  - Featured projects with autoplay preview videos/screenshots
-  - Expandable "Mini Projects" card listing smaller practice builds with individual GitHub links
-- **Education timeline** with a vertical connector and alternating layout
+  - Featured projects with detailed descriptions, tech stacks, GitHub links, and live demos
+  - Expandable "Mini Projects" card listing smaller practice builds with individual GitHub links and live demos
 - **Contact form**
   - Real email delivery via [EmailJS](https://www.emailjs.com/)
   - Client-side validation with on-blur and on-submit checks
@@ -33,7 +32,7 @@ A modern, responsive personal portfolio built with React and Tailwind CSS, showc
 | Frontend          | React, React Router                 |
 | Styling           | Tailwind CSS                        |
 | Animations        | AOS (Animate On Scroll)             |
-| Icons             | react-icons                         |
+| Icons             | react-icons, lucide-react          |
 | Email Service     | EmailJS                             |
 | Deployment        | Vercel                              |
 | Analytics         | Vercel Web Analytics                |
@@ -54,14 +53,12 @@ my-personal-space/
 │   │   ├── About.jsx
 │   │   ├── Skills.jsx
 │   │   ├── Projects.jsx
-│   │   ├── Education.jsx
 │   │   ├── Contact.jsx
 │   │   ├── Navbar.jsx
 │   │   └── Footer.jsx
 │   ├── data/
 │   │   ├── skills.js
 │   │   ├── projects.js
-│   │   └── educationData.js
 │   ├── pages/
 │   │   └── Home.jsx
 │   │   └── NotFound.jsx

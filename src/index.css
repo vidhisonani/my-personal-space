@@ -1,112 +1,88 @@
-@import "tailwindcss";
+  @import "tailwindcss";
 
-/* purple */
-/* @theme {
-  --color-accent: #9333ea;
-  --color-accent-light: #c084fc;
-  --color-accent-dark: #6366F1;
+  @theme {
+    /* Light mode (default) */
+    --color-bg: #fbf8f0;
+    --color-card: #f4efe4;
+    --color-card-alt: #dce6db;
+    --color-text-main: #283d38;
+    --color-text-muted: #687b72;
+    --color-border: #d8d1c2;
+    --color-accent: #bd7057;
+    --color-accent-light: #e8c874;
+    --color-accent-dark: #655536;
+    --color-sage: #779486;
+    --color-contact-card: #789586;
 
-  --color-bg-dark: #0b0f1a;
-  --color-card-dark: #111827;
+    --color-error: #AA4A44;
 
-  --color-text-main: #e5e7eb;
-  --color-text-muted: #9ca3af;
+    --font-heading: "Fraunces", Georgia, serif;
+    --font-mono: "DM Mono", monospace;
+    --font-body: "DM Sans", sans-serif;
+  }
 
-  --color-border: #1f2937;
-} */
-/* blue */
-@theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #60a5fa;
-  --color-accent-dark: #1d4ed8;
+  .dark {
+    --color-bg: #182522;
+    --color-card: #22332e;
+    --color-card-alt: #30483e;
+    --color-text-main: #eef0e4;
+    --color-text-muted: #a9b4a7;
+    --color-border: #5b7166;
+    --color-accent: #df9071;
+    --color-accent-light: #dfc26e;
+    --color-accent-dark: #3d514a;
+    --color-sage: #a8c5ad;
+    --color-contact-card: #324A41;
+    --color-error: #E48670;
+  }
 
-  --color-bg-dark: #0a0e1a;
-  --color-card-dark: #131a2b;
-  --color-card: #1a2338;
+  @custom-variant dark (&:where(.dark, .dark *));
 
-  --color-text-main: #e2e8f0;
-  --color-text-muted: #8a93a6;
+  * {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
 
-  --color-border: #2a3652;
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
 
-  /* --font-heading: "Exo", sans-serif; */
-  --font-heading: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-}
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+  }
 
-:root {
-  --scrollbar-track: #e5e9f0;
-  --scrollbar-thumb: var(--color-accent);
-  --scrollbar-thumb-border: #e5e9f0;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
 
-.dark {
-  --scrollbar-track: var(--color-card);
-  --scrollbar-thumb: var(--color-accent);
-  --scrollbar-thumb-border: var(--color-card);
-}
+  .font-mono-label {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+  }
 
-* {
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) var(--color-card);
+  }
 
-html,
-body {
-  scroll-behavior: smooth;
-}
+  html::-webkit-scrollbar {
+    width: 10px;
+  }
 
-.custom-scroll {
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-}
+  html::-webkit-scrollbar-track {
+    background: var(--color-card);
+  }
 
-.custom-scroll::-webkit-scrollbar {
-  width: 10px;
-}
+  html::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 999px;
+  }
 
-.custom-scroll::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-  border-radius: 999px;
-}
-
-.custom-scroll::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 999px;
-  border: 2px solid var(--scrollbar-thumb-border);
-}
-
-.custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-dark);
-}
-
-html {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-}
-
-html::-webkit-scrollbar {
-  width: 10px;
-}
-
-html::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-}
-
-html::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 999px;
-}
-
-html::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-dark);
-}
-
-body {
-  font-family: var(--font-body);
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-}
-
-@custom-variant dark (&:where(.dark, .dark *));
+  html::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-dark);
+  }
