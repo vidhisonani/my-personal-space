@@ -38,7 +38,7 @@ function WorkItem({ card, index }) {
             {card.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-text-muted border-b border-border pb-0.5 font-mono text-[10px]"
+                className="bg-card-alt text-text-muted px-2 py-1.5 font-mono text-[10px]"
               >
                 {tag}
               </span>
