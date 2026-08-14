@@ -111,7 +111,7 @@ function Contact() {
               data-aos-delay="200"
               className="flex flex-col justify-between "
             >
-              <div>
+              <div className="py-3">
                 <p className="font-mono-label">04 / Next Conversation</p>
                 <h2 className="text-[44px] md:text-[78px] font-semibold leading-[0.90] tracking-[0.001em] mt-2">
                   Have a good problem?

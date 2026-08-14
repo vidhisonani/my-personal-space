@@ -38,43 +38,43 @@ function WorkItem({ card, index }) {
             {card.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-text-muted border-b border-border pb-0.5 font-mono text-[10px]"
-              >
-                {tag}
+                className="bg-card-alt text-text-muted px-2 py-1.5 font-mono-label"
+            >
+            { tag }
               </span>
-            ))}
-          </div>
+        ))}
+      </div>
         )}
 
-        <div className="mt-6 pt-4 border-t border-border flex flex-wrap items-center gap-5">
-          {card.githubLink && (
-            <a
-              href={card.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${card.title} on GitHub`}
-              className="inline-flex items-center gap-1.5 text-accent font-mono-label hover:text-accent-light hover:underline transition-colors duration-200"
-            >
-              <FiGithub size={16} />
-              GitHub
-            </a>
-          )}
+      <div className="mt-6 pt-4 border-t border-border flex flex-wrap items-center gap-5">
+        {card.githubLink && (
+          <a
+            href={card.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${card.title} on GitHub`}
+            className="inline-flex items-center gap-1.5 text-accent font-mono-label hover:text-accent-light hover:underline transition-colors duration-200"
+          >
+            <FiGithub size={16} />
+            GitHub
+          </a>
+        )}
 
-          {card.liveLink && (
-            <a
-              href={card.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${card.title} live demo`}
-              className="inline-flex items-center gap-1.5 text-accent font-mono-label hover:text-accent-light hover:underline transition-colors duration-200"
-            >
-              <ExternalLink size={15} />
-              Live Demo
-            </a>
-          )}
-        </div>
+        {card.liveLink && (
+          <a
+            href={card.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${card.title} live demo`}
+            className="inline-flex items-center gap-1.5 text-accent font-mono-label hover:text-accent-light hover:underline transition-colors duration-200"
+          >
+            <ExternalLink size={15} />
+            Live Demo
+          </a>
+        )}
       </div>
-    </article>
+    </div>
+    </article >
   );
 }
 
@@ -157,11 +157,11 @@ function MiniProjects({ card }) {
         </div>
 
         {card.tags && card.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 md:justify-end md:max-w-[270px]">
+          <div className="flex flex-wrap gap-x-3 gap-y-2 md:justify-end md:max-w-[270px]">
             {card.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-card-alt text-text-muted px-2 py-1.5 font-mono text-[10px]"
+                className="bg-card-alt text-text-muted px-2 py-1.5 font-mono-label"
               >
                 {tag}
               </span>
@@ -171,11 +171,10 @@ function MiniProjects({ card }) {
       </div>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          expanded
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${expanded
             ? "max-h-[600px] opacity-100"
             : "max-h-0 opacity-0"
-        }`}
+          }`}
       >
         <div className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-x-8">
           {card.subProjects.map((sub, i) => (
@@ -194,11 +193,10 @@ function MiniProjects({ card }) {
         >
           <ChevronDown
             size={14}
-            className={`transition-transform duration-300 ${
-              expanded
+            className={`transition-transform duration-300 ${expanded
                 ? "rotate-180"
                 : "rotate-0"
-            }`}
+              }`}
           />
 
           {expanded
