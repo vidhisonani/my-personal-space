@@ -68,20 +68,6 @@ export const projectData = [
                     { icon: SiJavascript, color: "#F7DF1E" },
                 ],
             },
-            // {
-            //     name: "💖 Heart Trail Animation", githubLink: "https://github.com/vidhisonani/web-mini-projects/tree/main/03-Heart-Trail-Animation", liveLink: "https://hearttrailbyvidhi.netlify.app/",
-            //     tech: [
-            //         { icon: SiHtml5, color: "#E34F26" },
-            //         { icon: SiJavascript, color: "#F7DF1E" },
-            //     ],
-            // },
-            // {
-            //     name: "⏰ Digital Clock", githubLink: "https://github.com/vidhisonani/web-mini-projects/tree/main/04-Digital-Clock", liveLink: "https://digitalclockbyvidhi.netlify.app/",
-            //     tech: [
-            //     { icon: SiHtml5, color: "#E34F26" },
-            //     { icon: SiJavascript, color: "#F7DF1E" },
-            // ],
-            // },
         ],
     },
 

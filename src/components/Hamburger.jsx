@@ -1,16 +1,16 @@
-import { HiMenu, HiX } from "react-icons/hi";
+import { Menu, X } from "lucide-react";
 
 export default function Hamburger({ open, setOpen }) {
   return (
     <button
-      aria-label="Toggle mobile menu"
+      aria-label={open ? "Close menu" : "Open menu"}
       onClick={() => setOpen(!open)}
-      className="md:hidden flex flex-col justify-around"
+      className="md:hidden w-9.25 h-9.25 border border-border bg-card text-text-main flex items-center justify-center cursor-pointer hover:border-accent hover:text-accent transition-colors duration-200"
     >
       {open ? (
-        <HiX className="text-3xl text-accent" />
+        <X size={17} />
       ) : (
-        <HiMenu className="text-3xl text-accent" />
+        <Menu size={17} />
       )}
     </button>
   );

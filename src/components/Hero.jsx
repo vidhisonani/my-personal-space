@@ -1,152 +1,153 @@
-import React, { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiArrowDown } from "react-icons/hi";
-import profilePhoto from "../assets/profile.webp";
-
-const roles = ["Developer", "Programmer", "Coder"];
+import React from "react";
+import { ArrowDown, ArrowRight, Mail, ExternalLink } from "lucide-react";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
 
 function Hero() {
-  const [currentRole, setCurrentRole] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [typing, setTyping] = useState(true);
-
-  useEffect(() => {
-    const word = roles[currentRole];
-    let timeout;
-
-    if (typing) {
-      if (displayed.length < word.length) {
-        timeout = setTimeout(() => {
-          setDisplayed(word.slice(0, displayed.length + 1));
-        }, 100);
-      } else {
-        timeout = setTimeout(() => setTyping(false), 1800);
-      }
-    } else {
-      if (displayed.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayed(displayed.slice(0, -1));
-        }, 60);
-      } else {
-        setCurrentRole((prev) => (prev + 1) % roles.length);
-        setTyping(true);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayed, typing, currentRole]);
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
       id="home"
-      className="relative dark:bg-card-dark bg-gray-50 min-h-screen flex items-center px-6 overflow-hidden"
+      className="min-h-[calc(100vh-72px)] relative overflow-hidden"
     >
-      <div className="absolute top-10 -left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -right-20 w-80 h-80 bg-accent-light/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute w-75 h-75 rounded-full bg-card-alt -right-45 top-[16%] pointer-events-none" />
+      <div className="w-[min(1120px,calc(100%-48px))] mx-auto grid grid-cols-1 md:grid-cols-[1.08fr_0.92fr] gap-12 items-center py-20 md:py-28 relative z-10">
+        <div>
+          <div className="font-mono-label text-accent flex items-center gap-2.5 mb-6">
+            <span className="h-px w-7 bg-accent" />
+            a personal digital story
+          </div>
 
-      <div className="relative max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="text-center md:text-left order-2 md:order-1">
-          <p
-            data-aos="fade-right"
-            data-aos-duration="600"
-            className="text-accent dark:text-text-main text-lg mb-3 tracking-wide"
-          >
-            Hello, I'm
-          </p>
-
-          <h1
-            data-aos="fade-right"
-            data-aos-duration="600"
-            data-aos-delay="100"
-            className="text-5xl md:text-6xl font-bold text-accent dark:text-text-main mb-4 leading-tight"
-          >
-            Vidhi Patel
+          <h1 className="font-heading text-[57px] md:text-[90px] lg:text-[108px] leading-[0.91] tracking-[-0.075em] mb-7 max-w-[650px] text-text-main">
+            Hi, I'm
+            <br />
+            <em className="text-accent not-italic">Vidhi.</em>
+            <br />
+            I make useful
+            <br />
+            things.
           </h1>
 
-          <div
-            data-aos="fade-right"
-            data-aos-duration="600"
-            data-aos-delay="200"
-            className="text-3xl md:text-4xl font-bold text-accent-light dark:text-text-main mb-4 h-12 flex items-center justify-center md:justify-start gap-2"
-          >
-            I'm a{" "}
-            <span className="text-accent min-w-[10ch] text-left">
-              {displayed}
-              <span className="animate-pulse">|</span>
-            </span>
-          </div>
-
-          <p
-            data-aos="fade-right"
-            data-aos-duration="600"
-            data-aos-delay="300"
-            className="text-accent-light dark:text-text-main text-base md:text-lg mb-8"
-          >
-            Computer Engineering Student
+          <p className="text-lg leading-[1.7] text-text-muted max-w-122.5 mb-8">
+            A Computer Engineering student learning to turn questions into
+            useful, thoughtful full-stack products.
           </p>
 
-          <div
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="400"
-            className="flex items-center gap-4 flex-wrap justify-center md:justify-start mb-10"
-          >
-            <a
-              href="#projects"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold text-sm hover:bg-accent-light transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5"
+          <div className="flex gap-3 flex-wrap mb-7">
+            <button
+              onClick={() => scrollTo("projects")}
+              className="inline-flex items-center gap-2 px-4.25 py-3 border border-accent bg-accent text-white font-mono text-xs font-semibold cursor-pointer transition-transform duration-200 hover:-translate-y-1"
             >
-              View My Work
-              <HiArrowDown className="text-base" />
-            </a>
-            <a
-              href="#contact"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-accent text-accent font-semibold text-sm hover:bg-accent hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+              Follow the work <ArrowDown size={15} />
+            </button>
+            <button
+              onClick={() => scrollTo("contact")}
+              className="inline-flex items-center gap-2 px-4.25 py-3 border border-accent bg-transparent text-accent font-mono text-xs font-semibold cursor-pointer transition-transform duration-200 hover:-translate-y-1"
             >
-              Contact Me
-            </a>
+              Say hello <ArrowRight size={14} />
+            </button>
           </div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="500"
-            className="flex items-center gap-5 justify-center md:justify-start"
-          >
+          <div className="flex gap-2.5">
             <a
               href="https://github.com/vidhisonani"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent dark:text-text-main transition-all duration-300 hover:-translate-y-0.5"
               aria-label="GitHub"
+              className="w-7.75 h-7.75 flex items-center justify-center border border-border text-text-muted transition-all duration-200 hover:text-accent hover:-translate-y-1"
             >
-              <FaGithub className="text-2xl" />
+              <FiGithub size={15} />
             </a>
             <a
               href="https://linkedin.com/in/vidhipatel73/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent dark:text-text-main hover:text-accent transition-all duration-300 hover:-translate-y-0.5"
               aria-label="LinkedIn"
+              className="w-7.75 h-7.75 flex items-center justify-center border border-border text-text-muted transition-all duration-200 hover:text-accent hover:-translate-y-1"
             >
-              <FaLinkedin className="text-2xl" />
+              <FiLinkedin size={15} />
+            </a>
+            <a
+              href="https://leetcode.com/u/vidhipatel07/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Leetcode"
+              className="w-7.75 h-7.75 flex items-center justify-center border border-border text-text-muted transition-all duration-200 hover:text-accent hover:-translate-y-1"
+            >
+              <SiLeetcode size={15} />
+            </a>
+            <a
+              href="mailto:vidhilotus7@gmail.com"
+              aria-label="Send Email"
+              className="w-7.75 h-7.75 flex items-center justify-center border border-border text-text-muted transition-all duration-200 hover:text-accent hover:-translate-y-1"
+            >
+              <Mail size={15} />
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open resume"
+              className="w-7.75 h-7.75 flex items-center justify-center border border-border text-text-muted transition-all duration-200 hover:text-accent hover:-translate-y-1"
+            >
+              <ExternalLink size={14} />
             </a>
           </div>
         </div>
 
-        {/* Right: Photo with decorative ring */}
         <div
-          data-aos="fade-left"
-          data-aos-duration="700"
-          className="order-1 md:order-2 flex justify-center"
+          className="relative bg-card border border-border p-4 rotate-2 transition-transform duration-300 hover:rotate-0 hover:-translate-y-1.5 max-w-120 mx-auto w-full"
+          style={{
+            boxShadow: "16px 16px 0 color-mix(in srgb, var(--color-accent) 20%, transparent)",
+          }}
+          aria-label="Vidhi Patel build room"
         >
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full border-2 border-dashed border-accent/40 scale-110 animate-[spin_20s_linear_infinite]" />
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent shadow-2xl shadow-accent/30">
-              <img
-                src={profilePhoto}
-                alt="Vidhi Patel"
-                className="w-full h-full object-cover"
-              />
+          <div className="flex justify-between items-center border-b border-border pb-3.5 text-text-muted">
+            <span className="font-mono-label">build-room / vidhi-patel</span>
+            <span className="flex gap-1.5">
+              <i className="w-1.5 h-1.5 rounded-full bg-accent block" />
+              <i className="w-1.5 h-1.5 rounded-full bg-accent-light block" />
+              <i className="w-1.5 h-1.5 rounded-full bg-text-muted block" />
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2.5 pt-4">
+            <div className="min-h-[102px] border border-border p-3.5 bg-card-alt">
+              <span className="font-mono-label text-text-muted">focus</span>
+              <strong className="font-heading text-[23px] font-semibold block my-3 text-text-main">
+                MERN
+              </strong>
+              <span className="font-mono text-[10px] text-text-muted">
+                full-stack systems
+              </span>
+            </div>
+
+            <div className="min-h-25.5 border border-border p-3.5 bg-card-alt">
+              <span className="font-mono-label text-text-muted">status</span>
+              <strong className="font-heading text-[23px] font-semibold block my-3 text-accent">
+                curious
+              </strong>
+              <span className="font-mono text-[10px] text-text-muted">
+                always iterating
+              </span>
+            </div>
+
+            <div className="col-span-2 min-h-33.75 border border-border p-3.5 bg-card-alt">
+              <span className="font-mono-label text-text-muted">
+                current energy
+              </span>
+              <div className="h-1.5 bg-border mt-2.5">
+                <div className="h-full bg-accent w-[72%]" />
+              </div>
+              <div className="h-1.5 bg-border mt-2.5">
+                <div className="h-full bg-accent-light w-[47%]" />
+              </div>
+              <span className="block mt-3 font-mono text-[10px] text-text-muted">
+                clean interfaces / dependable code / useful questions
+              </span>
             </div>
           </div>
         </div>

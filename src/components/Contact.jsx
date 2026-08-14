@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdOutlineEmail, MdError, MdCheckCircle } from "react-icons/md";
 import emailjs from "@emailjs/browser";
+import { ArrowRight } from "lucide-react";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -98,187 +98,207 @@ function Contact() {
   }, [status]);
   return (
     <>
-      <section id="contact" className="scroll-mt-16 " />
-      <div className="antialiased dark:bg-card-dark bg-gray-50 py-5 flex w-full min-h-screen justify-center items-center">
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="700"
-          className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-linear-to-br from-accent via-accent-light to-accent-dark w-[90vw] max-w-5xl p-8 rounded-xl shadow-lg text-white"
-        >
+      <section id="contact" className="border-t border-border">
+        <div className="antialiased bg-bg px-5 py-15 md:px-10 md:py-20 flex w-full min-h-screen justify-center items-center">
           <div
-            data-aos="fade-right"
+            data-aos="zoom-in"
             data-aos-duration="700"
-            data-aos-delay="200"
-            className="flex flex-col justify-between "
+            className="flex flex-col md:flex-row space-x-6 md:space-x-0 space-y-6 bg-contact-card w-[95vw] max-w-5xl p-5 md:py-15 md:px-10 shadow-lg text-white"
           >
-            <div>
-              <h1 className="font-bold text-4xl tracking-wide">Contact Me</h1>
-              <p className="pt-2 text-white md:max-w-[90%]">
-                I'm always open to new opportunities, collaborations, or just a
-                friendly chat about tech and ideas.
-              </p>
-            </div>
-            <div className="flex space-x-3 text-2xl mt-5 md:mt-0">
-              <a
-                href="https://github.com/vidhisonani"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub Profile"
-              >
-                <FaGithub className="cursor-pointer" />
-              </a>
-              <a
-                href="https://linkedin.com/in/vidhipatel73/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
-              >
-                <FaLinkedin className="cursor-pointer" />
-              </a>
-              <a href="mailto:vidhilotus7@gmail.com" aria-label="Send Email">
-                <MdOutlineEmail className="cursor-pointer" />
-              </a>
-            </div>
-          </div>
-          <div
-            data-aos="fade-left"
-            data-aos-duration="700"
-            data-aos-delay="200"
-            className="bg-white rounded-xl shadow-lg p-8 md:w-[75%]"
-          >
-            <form
-              onSubmit={handleSubmit}
-              noValidate
-              className="text-accent flex flex-col space-y-4 "
+            <div
+              data-aos="fade-right"
+              data-aos-duration="700"
+              data-aos-delay="200"
+              className="flex flex-col justify-between "
             >
-              {/* Status Messages */}
-              {status === "success" && (
-                <div
-                  role="status"
-                  aria-live="polite"
-                  className="flex items-center gap-2 px-4 py-3 rounded-lg bg-green-50 border border-green-200 text-green-700 text-sm font-medium"
-                >
-                  <MdCheckCircle size={20} className="shrink-0" />
-                  Message sent successfully! I'll get back to you soon.
-                </div>
-              )}
-              {status === "error" && (
-                <div
-                  role="alert"
-                  aria-live="assertive"
-                  className="flex items-center gap-2 px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm font-medium"
-                >
-                  <MdError size={20} className="shrink-0" />
-                  Something went wrong. Please try again.
-                </div>
-              )}
               <div>
-                <label htmlFor="name" className="text-md font-semibold">
-                  Your name
-                </label>
-                <div className="relative mt-2">
-                  <input
-                    required
-                    type="text"
-                    name="name"
-                    id="name"
-                    autoComplete="name"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    className={`ring-1 w-full rounded-md px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.name ? "ring-red-500" : "ring-gray-300"
-                      }`}
-                  />
-                  {errors.name && (
-                    <MdError
-                      size={20}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-red-500 pointer-events-none"
-                    />
-                  )}
-                </div>
-                {errors.name && (
-                  <div role="alert" aria-live="polite" className="flex items-center gap-2 px-2 py-1 mt-1 text-sm text-red-600">
-                    <MdError size={18} className="shrink-0" />
-                    {errors.name}
-                  </div>
-                )}
+                <p className="font-mono-label">04 / Next Conversation</p>
+                <h2 className="text-[44px] md:text-[78px] font-semibold leading-[0.90] tracking-[0.001em] mt-2">
+                  Have a good problem?
+                </h2>
+                <p className="mt-5 text-white md:max-w-[90%]">
+                  I'm always open to new opportunities, collaborations, or just a
+                  friendly chat about tech and ideas.
+                </p>
               </div>
-              <div>
-                <label htmlFor="email" className="text-md font-semibold">
-                  Email Address
-                </label>
-                <div className="relative mt-2">
-                  <input
-                    required
-                    type="email"
-                    id="email"
-                    name="email"
-                    autoComplete="email"
-                    value={formData.email}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    placeholder="Email Address"
-                    className={`ring-1 w-full rounded-md px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.email ? "ring-red-500" : "ring-gray-300"
-                      }`}
-                  />
-                  {errors.email && (
-                    <MdError
-                      size={20}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-red-500 pointer-events-none"
-                    />
-                  )}
-                </div>
-                {errors.email && (
-                  <div role="alert" aria-live="polite" className="flex items-center gap-2 px-2 py-1 mt-1 text-sm text-red-600">
-                    <MdError size={18} className="shrink-0" />
-                    {errors.email}
-                  </div>
-                )}
-              </div>
-              <div>
-                <label htmlFor="message" className="text-md font-semibold">
-                  Message
-                </label>
-                <div className="relative mt-2">
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Message"
-                    rows="4"
-                    autoComplete="off"
-                    value={formData.message}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    required
-                    className={`ring-1 w-full rounded-md px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.message ? "ring-red-500" : "ring-gray-300"
-                      }`}
-                  />
-                  {errors.message && (
-                    <MdError
-                      size={20}
-                      className="absolute right-3 top-3 text-red-500 pointer-events-none"
-                    />
-                  )}
-                </div>
-                {errors.message && (
-                  <div role="alert" aria-live="polite" className="flex items-center gap-2 px-2 py-1 mt-1 text-sm text-red-600">
-                    <MdError size={18} className="shrink-0" />
-                    {errors.message}
-                  </div>
-                )}
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="cursor-pointer inline-block self-end bg-accent rounded-lg text-white font-bold py-2 uppercase text-sm px-2"
+              <a href="mailto:vidhilotus7@gmail.com" aria-label="Send Email" className="flex flex-row pt-5 gap-2">
+                <MdOutlineEmail />
+                <p className="font-mono font-medium text-[11px]">vidhilotus7@gmail.com</p>
+              </a>
+            </div>
+            <div
+              data-aos="fade-left"
+              data-aos-duration="700"
+              data-aos-delay="200"
+              className="md:w-[70%]"
+            >
+              <form
+                onSubmit={handleSubmit}
+                noValidate
+                className="flex flex-col space-y-4"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </button>
-            </form>
+                {/* Status Messages */}
+                {status === "success" && (
+                  <div
+                    role="status"
+                    aria-live="polite"
+                    className="flex items-center gap-2 px-4 py-3 rounded-lg bg-green-50 border border-green-200 text-green-700 text-sm font-medium font-body"
+                  >
+                    <MdCheckCircle size={20} className="shrink-0" />
+                    Message sent successfully! I'll get back to you soon.
+                  </div>
+                )}
+                {status === "error" && (
+                  <div
+                    role="alert"
+                    aria-live="assertive"
+                    className="flex items-center gap-2 px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm font-medium font-body"
+                  >
+                    <MdError size={20} className="shrink-0" />
+                    Something went wrong. Please try again.
+                  </div>
+                )}
+                <div>
+                  <label htmlFor="name" className="font-mono-label text-white">
+                    Your name
+                  </label>
+                  <div className="relative mt-2">
+                    <input
+                      required
+                      type="text"
+                      name="name"
+                      id="name"
+                      autoComplete="name"
+                      placeholder="How can I call you?"
+                      value={formData.name}
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      className={`text-sm font-body w-full bg-white/10 border px-4 py-2 pr-10 text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.name
+                        ? "border-error focus:ring-error"
+                        : "border-white/30"
+                        }`}
+                    />
+
+                    {errors.name && (
+                      <MdError
+                        size={20}
+                        className="font-body absolute right-3 top-1/2 -translate-y-1/2  text-error pointer-events-none"
+                      />
+                    )}
+                  </div>
+
+                  {errors.name && (
+                    <div
+                      role="alert"
+                      aria-live="polite"
+                      className="flex items-center gap-2 px-2 py-1 mt-1 text-sm  text-error"
+                    >
+                      <MdError
+                        size={16}
+                        className="shrink-0"
+                      />
+                      {errors.name}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="email" className="font-mono-label text-white">
+                    Email Address
+                  </label>
+                  <div className="relative mt-2">
+                    <input
+                      required
+                      type="email"
+                      id="email"
+                      name="email"
+                      autoComplete="email"
+                      value={formData.email}
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      placeholder="Email Address"
+                      className={`text-sm font-body w-full bg-white/10 border px-4 py-2 pr-10 text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.email
+                        ? "border-error focus:ring-error"
+                        : "border-white/30"
+                        }`}
+                    />
+
+                    {errors.email && (
+                      <MdError
+                        size={20}
+                        className="font-body absolute right-3 top-1/2 -translate-y-1/2 text-error pointer-events-none"
+                      />
+                    )}
+                  </div>
+
+                  {errors.email && (
+                    <div
+                      role="alert"
+                      aria-live="polite"
+                      className="flex items-center gap-2 px-2 py-1 mt-1 text-sm  text-error"
+                    >
+                      <MdError
+                        size={16}
+                        className="shrink-0"
+                      />
+                      {errors.email}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="message" className="font-mono-label text-white">
+                    A Note
+                  </label>
+                  <div className="relative mt-2">
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell me a little about you're making..."
+                      rows="4"
+                      autoComplete="off"
+                      value={formData.message}
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      required
+                      className={`text-sm font-body w-full bg-white/10 border px-4 py-2 pr-10 text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-accent transition-colors duration-200 ${errors.message
+                        ? "border-error focus:ring-error"
+                        : "border-white/30"
+                        }`}
+                    />
+
+                    {errors.message && (
+                      <MdError
+                        size={20}
+                        className="font-body absolute right-3 top-1/2 -translate-y-1/2  text-error pointer-events-none"
+                      />
+                    )}
+                  </div>
+
+                  {errors.message && (
+                    <div
+                      role="alert"
+                      aria-live="polite"
+                      className="flex items-center gap-2 px-2 py-1 mt-1 text-sm  text-error"
+                    >
+                      <MdError
+                        size={16}
+                        className="shrink-0"
+                      />
+                      {errors.message}
+                    </div>
+                  )}
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="cursor-pointer inline-block rounded-sm self-start bg-accent text-card font-bold p-3 text-[12px]"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message "} <ArrowRight size={17} className="inline-block" />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
