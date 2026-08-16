@@ -15,7 +15,8 @@ function Hero() {
     >
       <div className="absolute w-75 h-75 rounded-full bg-card-alt -right-45 top-[16%] pointer-events-none" />
       <div className="w-[min(1120px,calc(100%-48px))] mx-auto grid grid-cols-1 md:grid-cols-[1.08fr_0.92fr] gap-12 items-center py-20 md:py-28 relative z-10">
-        <div>
+        <div data-aos="fade-right"
+          data-aos-duration="600">
           <div className="font-mono-label text-accent flex items-center gap-2.5 mb-6">
             <span className="h-px w-7 bg-accent" />
             a personal digital story
@@ -104,6 +105,8 @@ function Hero() {
             boxShadow: "16px 16px 0 color-mix(in srgb, var(--color-accent) 20%, transparent)",
           }}
           aria-label="Vidhi Patel build room"
+          data-aos="fade-left"
+          data-aos-duration="600"
         >
           <div className="flex justify-between items-center border-b border-border pb-3.5 text-text-muted">
             <span className="font-mono-label">build-room / vidhi-patel</span>

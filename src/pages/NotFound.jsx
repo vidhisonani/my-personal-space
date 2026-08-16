@@ -9,21 +9,45 @@ export default function NotFound() {
       <div className="absolute -bottom-24 -right-20 h-80 w-80 rounded-full bg-accent-light/10 blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto flex min-h-[calc(100vh-10rem)] max-w-4xl items-center justify-center">
-        <div className="w-full border border-border bg-card p-8 text-center shadow-xl shadow-accent/5 sm:p-12">
-          <p className="font-mono-label mb-5 text-accent">
+        <div 
+          className="w-full border border-border bg-card p-8 text-center shadow-xl shadow-accent/5 sm:p-12"
+          data-aos="zoom-in"
+          data-aos-duration="600"
+        >
+          <p 
+            className="font-mono-label mb-5 text-accent"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
             404 / page not found
           </p>
 
-          <h1 className="font-heading text-5xl leading-none tracking-[-0.04em] text-text-main sm:text-7xl">
+          <h1 
+            className="font-heading text-5xl leading-none tracking-[-0.04em] text-text-main sm:text-7xl"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="300"
+          >
             Lost in the margins?
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-[1.8] text-text-muted sm:text-base">
+          <p 
+            className="mx-auto mt-6 max-w-2xl text-sm leading-[1.8] text-text-muted sm:text-base"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="400"
+          >
             The page you're looking for doesn't exist, was moved, or the URL
             was typed incorrectly. Let's get you back to something useful.
           </p>
 
-          <div className="mt-8 flex items-center justify-center">
+          <div 
+            className="mt-8 flex items-center justify-center"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="500"
+          >
             <Link
               to="/"
               className="inline-flex items-center justify-center bg-accent px-6 py-3 font-mono-label text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-dark"
